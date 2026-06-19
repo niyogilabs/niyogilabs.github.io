@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RostraMind Support &amp; Guide | Niyogi Labs</title>
+  <meta name="description" content="Step-by-step configuration manual, setup guide, and FAQs for RostraMind Google Sheets calendar-blocking add-on.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo-link" id="nav-logo">
+        <div class="logo-dot"></div>
+        Niyogi Labs
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-nav-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu-list">
+        <li><a href="../index.html" class="nav-link" id="nav-link-home">Home</a></li>
+        <li><a href="../butler/index.html" class="nav-link" id="nav-link-butler">Butler Platform</a></li>
+        <li><a href="index.html" class="nav-link" id="nav-link-rostramind">RostraMind Add-on</a></li>
+        <li><a href="support.html" class="nav-link active" id="nav-link-support">Support</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="container hero" id="support-hero" style="padding-bottom: 20px;">
+    <span class="badge" id="support-badge">Help Center</span>
+    <h1 id="support-title">RostraMind Support &amp; Setup</h1>
+    <p class="tagline" id="support-desc">Learn how to configure your spreadsheet grids, map custom shift slots, add reminders, and troubleshoot sync behaviors.</p>
+  </section>
+
+  <!-- Support & Guides Grid -->
+  <section class="section" style="padding-top: 10px;" id="support-content">
+    <div class="container support-grid">
+      
+      <!-- Left Column: Setup Guide -->
+      <div id="setup-section">
+        <h2>Setup &amp; Configuration Manual</h2>
+        <p>Follow these steps to map your Google Sheet roster and synchronize it directly with Google Calendar.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 32px; margin-top: 24px;">
+          <!-- Step 1 -->
+          <div style="display: flex; gap: 16px;">
+            <div style="flex-shrink:0; width: 32px; height: 32px; background: var(--gradient-indigo-purple); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.95rem;">1</div>
+            <div>
+              <h3 style="margin-bottom:8px;">Open configuration Sidebar</h3>
+              <p style="font-size:0.95rem;">From your active Google Spreadsheet, navigate to the menu: <strong>Extensions &rarr; RostraMind &rarr; Configure</strong>. This opens the control panel on the right side of your spreadsheet.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div style="display: flex; gap: 16px;">
+            <div style="flex-shrink:0; width: 32px; height: 32px; background: var(--gradient-indigo-purple); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.95rem;">2</div>
+            <div>
+              <h3 style="margin-bottom:8px;">Map the Grid Configuration</h3>
+              <p style="font-size:0.95rem;">In the <strong>Setup</strong> tab, map the layout of your sheet roster using the 1-based indexing values:</p>
+              <ul style="color: var(--text-sub); margin-left: 20px; font-size: 0.95rem; margin-bottom: 12px;">
+                <li style="margin-bottom: 6px;"><strong>Target Sheet Name:</strong> Select the sheet tab where your roster lives.</li>
+                <li style="margin-bottom: 6px;"><strong>Header Rows:</strong> Number of metadata/header rows at the top of the spreadsheet (default is 5).</li>
+                <li style="margin-bottom: 6px;"><strong>Header Cols:</strong> Number of fixed column headers on the left (default is 2).</li>
+                <li style="margin-bottom: 6px;"><strong>Date Row:</strong> The row containing the shift dates (default is row 2).</li>
+                <li style="margin-bottom: 6px;"><strong>Slot Row:</strong> The row containing shift codes like FN/AN (default is row 4).</li>
+                <li style="margin-bottom: 6px;"><strong>Email Column:</strong> Column containing staff email addresses (default is column 1).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div style="display: flex; gap: 16px;">
+            <div style="flex-shrink:0; width: 32px; height: 32px; background: var(--gradient-indigo-purple); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.95rem;">3</div>
+            <div>
+              <h3 style="margin-bottom:8px;">Configure Shift Slots &amp; Overrides</h3>
+              <p style="font-size:0.95rem;">Go to the <strong>Manage Slots</strong> tab to define default hours for shift codes:</p>
+              <ul style="color: var(--text-sub); margin-left: 20px; font-size: 0.95rem; margin-bottom: 12px;">
+                <li style="margin-bottom: 6px;">Example: Code <strong>FN</strong> (Forenoon) runs from <code>09:15</code> to <code>12:30</code>.</li>
+                <li style="margin-bottom: 6px;">Example: Code <strong>AN</strong> (Afternoon) runs from <code>13:15</code> to <code>16:30</code>.</li>
+                <li style="margin-bottom: 6px;"><strong>Day Overrides:</strong> Expand a slot and add customized hours for specific days (e.g. override AN on Fridays to run from <code>13:45</code> to <code>17:00</code>).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div style="display: flex; gap: 16px;">
+            <div style="flex-shrink:0; width: 32px; height: 32px; background: var(--gradient-indigo-purple); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.95rem;">4</div>
+            <div>
+              <h3 style="margin-bottom:8px;">Add Notifications &amp; Save</h3>
+              <p style="font-size:0.95rem;">In the <strong>Calendar</strong> tab, customize the scheduled event title, description, and add automatic calendar notifications (e.g. Email or Push notification 30 minutes before shifts). Press <strong>Save All Settings</strong>.</p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div style="display: flex; gap: 16px;">
+            <div style="flex-shrink:0; width: 32px; height: 32px; background: var(--gradient-indigo-purple); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.95rem;">5</div>
+            <div>
+              <h3 style="margin-bottom:8px;">Synchronize Calendars</h3>
+              <p style="font-size:0.95rem;">To trigger synchronization, navigate to the Google Spreadsheet menu: <strong>Extensions &rarr; RostraMind &rarr; Sync Calendars</strong>. An execution log will display calendar additions, updates, and skips.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: FAQs & Contact -->
+      <div>
+        <h2>Frequently Asked Questions</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 24px; margin-bottom: 40px;" id="faq-container">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the 25-user limit work?
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>RostraMind Free supports scheduling up to 25 unique team member emails in your target spreadsheet. If your active sheet contains more than 25 distinct emails, the sync process will notify you to upgrade. The system will continue to run for the first 25 emails, and exclude emails beyond that list. To sync larger spreadsheets, contact us for upgrade options.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my roster calendar data secure?
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. RostraMind is built on top of Google Apps Script and executes entirely within your Google account's context. Your calendar data and sheet contents are sent directly from your Google Sheet to Google Calendar via Google's OAuth APIs. Niyogi Labs does not host backend servers that collect, store, or inspect your scheduling data. Everything remains inside your Google Workspace environment.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I use weekend/day overrides?
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>In the sidebar, open the <strong>Manage Slots</strong> tab. Click <strong>+ Add Day Override</strong> inside a specific slot card. Select a day (Monday-Sunday) and customize the start/end times. If a schedule falls on that day of the week, RostraMind will automatically select the overridden hours instead of the default slot times.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I resolve "Access Denied" errors?
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This error occurs when the spreadsheet user running the sync does not have write access to the targeted calendar resource. Ensure that the <strong>Calendar ID</strong> field in your settings is set to <code>primary</code> (which schedules events on your calendar) or verify that you have administrative permissions on the external calendar you're targeting.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <h3>Need further support?</h3>
+          <p style="font-size: 0.9rem; margin-top: 8px;">For technical errors, custom integration requests, or enterprise/pricing inquiries, email us at:</p>
+          <a href="mailto:niyogi.labs@gmail.com" class="contact-email" id="support-email">niyogi.labs@gmail.com</a>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Please include your spreadsheet structure details and active error messages in your inquiry.</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 id="footer-logo">Niyogi Labs</h3>
+          <p style="font-size: 0.9rem; margin-bottom: 0;">Automating productivity and operation management workflows.</p>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Butler Platform</h4>
+          <ul class="footer-links-list">
+            <li><a href="../butler/index.html" id="footer-link-butler-about">Platform Overview</a></li>
+            <li><a href="https://github.com/niyogilabs/Butler" target="_blank" rel="noopener" id="footer-link-butler-git">Butler (Core Engine)</a></li>
+            <li><a href="https://github.com/niyogilabs/ButlerManager" target="_blank" rel="noopener" id="footer-link-butlermgr-git">ButlerManager (Console)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">RostraMind Add-on</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" id="footer-link-rostramind-about">Add-on Details</a></li>
+            <li><a href="support.html" id="footer-link-rostramind-support">Setup &amp; Support</a></li>
+            <li><a href="terms.html" id="footer-link-rostramind-terms">Terms of Service</a></li>
+            <li><a href="privacy.html" id="footer-link-rostramind-privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.85rem; margin-bottom: 0;" id="copyright-text">&copy; 2026 Niyogi Labs. All rights reserved.</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0;">Hosted on GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

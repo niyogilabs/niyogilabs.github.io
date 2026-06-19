@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RostraMind Add-on | Niyogi Labs</title>
+  <meta name="description" content="Google Sheets roster calendar-sync add-on. Connect spreadsheets to Google Calendars with custom slots, overrides, and reminders. Free for up to 25 users.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo-link" id="nav-logo">
+        <div class="logo-dot"></div>
+        Niyogi Labs
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-nav-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu-list">
+        <li><a href="../index.html" class="nav-link" id="nav-link-home">Home</a></li>
+        <li><a href="../butler/index.html" class="nav-link" id="nav-link-butler">Butler Platform</a></li>
+        <li><a href="index.html" class="nav-link active" id="nav-link-rostramind">RostraMind Add-on</a></li>
+        <li><a href="support.html" class="nav-link" id="nav-link-support">Support</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="container hero" id="rostramind-hero">
+    <span class="badge" id="rostramind-badge">Google Sheets Add-on</span>
+    <h1 id="rostramind-title" class="text-gradient text-cyan-blue">Block Calendars directly from Google Sheets</h1>
+    <p class="tagline" id="rostramind-desc">Connect spreadsheet duty rosters to Google Calendars automatically. Build complex shift slots, customize push notifications, and sync rosters in seconds.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="support.html" class="btn btn-primary" id="rostramind-cta-setup">View Setup &amp; Support Guide</a>
+      <a href="privacy.html" class="btn btn-secondary" id="rostramind-cta-privacy">Privacy Policy</a>
+      <a href="terms.html" class="btn btn-secondary" id="rostramind-cta-terms">Terms of Service</a>
+    </div>
+  </section>
+
+  <!-- Product Features -->
+  <section class="section" style="padding-top: 10px;" id="rostramind-features">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 40px;" id="features-title">Core Features &amp; Capabilities</h2>
+      
+      <div class="feature-box">
+        <!-- Feature 1 -->
+        <div class="feature-item" id="feat-sheet-sync">
+          <div class="feature-title">
+            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Flexible Grid Configuration
+          </div>
+          <p style="font-size:0.95rem; margin-bottom: 0;">Specify custom date rows, header rows, header columns, and employee email columns. RostraMind adapts to your spreadsheet's structure dynamically.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-item" id="feat-slot-mapping">
+          <div class="feature-title">
+            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Multi-Slot Custom Scheduling
+          </div>
+          <p style="font-size:0.95rem; margin-bottom: 0;">Set up custom shift IDs (like Forenoon "FN", Afternoon "AN") with default durations. Map spreadsheet cell values to exact calendar event durations.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-item" id="feat-overrides">
+          <div class="feature-title">
+            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Day-of-Week Overrides
+          </div>
+          <p style="font-size:0.95rem; margin-bottom: 0;">Need custom shift hours for Friday afternoons or weekend rosters? Configure day-of-week overrides to dynamically modify slot timings.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-item" id="feat-reminders">
+          <div class="feature-title">
+            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Auto Reminders &amp; Push Logs
+          </div>
+          <p style="font-size:0.95rem; margin-bottom: 0;">Set custom event titles, descriptions, and multiple Google Calendar reminders (popups or emails) scheduled X minutes before the event begins.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-item" id="feat-calendar-target">
+          <div class="feature-title">
+            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Custom Calendar ID Support
+          </div>
+          <p style="font-size:0.95rem; margin-bottom: 0;">Target team members' primary calendars or designate a specific calendar resource ID for team schedules or shared calendars.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-item" id="feat-audit">
+          <div class="feature-title">
+            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Real-Time Sync Logs
+          </div>
+          <p style="font-size:0.95rem; margin-bottom: 0;">Run sync processes directly from the sidebar. Inspect a scrollable, detailed execution log mapping additions, skips, and calendar updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Freemium Pricing Section -->
+  <section class="section pricing-section" id="rostramind-pricing" style="border-top:1px solid var(--border-subtle)">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 12px;" id="pricing-title">Simple Freemium Pricing</h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 32px auto;" id="pricing-subtitle">RostraMind is free for small teams and scales as your operations grow.</p>
+      
+      <div class="glass-card pricing-card" id="card-rostramind-pricing">
+        <span class="badge" style="background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.3); color: #22d3ee; margin: 0 auto 20px auto; display: table;" id="pricing-tier-badge">Freemium Tier</span>
+        <h3 id="pricing-tier-name" style="text-align: center; font-size: 1.8rem; margin-bottom: 4px;">RostraMind Free</h3>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">For operations teams up to 25 users</p>
+        
+        <div class="price" id="pricing-price-text">
+          $0 <span>/ forever</span>
+        </div>
+        
+        <ul style="list-style: none; margin: 24px 0; border-top: 1px solid var(--border-subtle); padding-top: 24px;">
+          <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 0.95rem;">
+            <svg style="color: var(--accent-cyan);" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Sync calendars for up to 25 unique emails
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 0.95rem;">
+            <svg style="color: var(--accent-cyan);" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Unlimited shift slots &amp; configurations
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 0.95rem;">
+            <svg style="color: var(--accent-cyan);" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Full day-of-week overrides support
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 0.95rem;">
+            <svg style="color: var(--accent-cyan);" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Multiple popups &amp; email event reminders
+          </li>
+        </ul>
+        
+        <a href="support.html#setup-section" class="btn btn-primary" style="width: 100%;" id="pricing-cta">Get Started Now</a>
+        
+        <div style="margin-top: 24px; text-align: center; border-top: 1px dashed var(--border-subtle); padding-top: 16px;">
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Need more than 25 synced users?</p>
+          <a href="mailto:niyogi.labs@gmail.com?subject=RostraMind%20Enterprise%20Upgrade" style="color: var(--accent-cyan); text-decoration: none; font-size: 0.9rem; font-weight: 600;" id="pricing-upgrade-link">Contact Support for Premium Plans &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 id="footer-logo">Niyogi Labs</h3>
+          <p style="font-size: 0.9rem; margin-bottom: 0;">Automating productivity and operation management workflows.</p>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Butler Platform</h4>
+          <ul class="footer-links-list">
+            <li><a href="../butler/index.html" id="footer-link-butler-about">Platform Overview</a></li>
+            <li><a href="https://github.com/niyogilabs/Butler" target="_blank" rel="noopener" id="footer-link-butler-git">Butler (Core Engine)</a></li>
+            <li><a href="https://github.com/niyogilabs/ButlerManager" target="_blank" rel="noopener" id="footer-link-butlermgr-git">ButlerManager (Console)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">RostraMind Add-on</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" id="footer-link-rostramind-about">Add-on Details</a></li>
+            <li><a href="support.html" id="footer-link-rostramind-support">Setup &amp; Support</a></li>
+            <li><a href="terms.html" id="footer-link-rostramind-terms">Terms of Service</a></li>
+            <li><a href="privacy.html" id="footer-link-rostramind-privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.85rem; margin-bottom: 0;" id="copyright-text">&copy; 2026 Niyogi Labs. All rights reserved.</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0;">Hosted on GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

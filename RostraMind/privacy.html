@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | RostraMind Add-on</title>
+  <meta name="description" content="Privacy Policy for RostraMind Google Sheets add-on. Learn how we access, process, and protect your calendar and spreadsheet data.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo-link" id="nav-logo">
+        <div class="logo-dot"></div>
+        Niyogi Labs
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-nav-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu-list">
+        <li><a href="../index.html" class="nav-link" id="nav-link-home">Home</a></li>
+        <li><a href="../butler/index.html" class="nav-link" id="nav-link-butler">Butler Platform</a></li>
+        <li><a href="index.html" class="nav-link" id="nav-link-rostramind">RostraMind Add-on</a></li>
+        <li><a href="support.html" class="nav-link" id="nav-link-support">Support</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Document Layout Container -->
+  <main class="container">
+    <div class="doc-layout" id="privacy-document">
+      <h1 id="privacy-title" style="font-size: 2.2rem; margin-bottom: 8px;">RostraMind Privacy Policy</h1>
+      <div class="doc-meta" id="privacy-meta">
+        Last Updated: June 19, 2026 &bull; Effective Date: June 19, 2026
+      </div>
+
+      <div class="doc-section">
+        <h2>1. Introduction</h2>
+        <p>Niyogi Labs ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how the RostraMind Google Sheets Add-on ("Service") accesses, handles, processes, and protects your information when you install and use the Service. We design our software so that your data remains in your control at all times.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>2. Data We Access and How We Use It</h2>
+        <p>RostraMind requires specific OAuth authorization permissions to function. Below are the categories of data the Service accesses and their purposes:</p>
+        <ul>
+          <li><strong>Google Sheets Data:</strong> The Service reads cell ranges in your active spreadsheet to map dates, employee email addresses, and roster slot names (e.g. FN/AN). This data is processed in-memory during sync execution to construct calendar events.</li>
+          <li><strong>Google Calendar Data:</strong> The Service creates, modifies, and deletes calendar events on your primary or specified calendar to align with your roster. It only modifies calendar events that were created by the Service or match the configured event title.</li>
+          <li><strong>Document Properties (Apps Script Storage):</strong> The Service saves configuration values (such as column indices, header row numbers, calendar IDs, and slot times) locally inside the spreadsheet's document storage property.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <h2>3. Zero Server-Side Storage</h2>
+        <p><strong>RostraMind runs entirely within the Google Apps Script ecosystem on Google's own cloud infrastructure.</strong></p>
+        <p>Niyogi Labs does not operate external database servers, APIs, or hosting platforms to collect your roster sheets, staff emails, or calendar schedules. All calculations are executed locally within your spreadsheet script context, and data is transmitted directly between your sheet and Google's Calendar servers. We have no backend visibility into your spreadsheets or scheduling entries.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>4. Information Sharing and Disclosure</h2>
+        <p>Because your data is never collected or stored on Niyogi Labs servers, we do not share, sell, trade, or distribute your spreadsheet data, emails, or calendar entries to third parties. All network communications are conducted directly and securely between your browser/spreadsheet environment and Google API endpoints.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>5. Required Google OAuth Scopes</h2>
+        <p>When installing RostraMind, you will be prompted to authorize the following scopes:</p>
+        <ul>
+          <li><code>https://www.googleapis.com/auth/spreadsheets</code> - To read and analyze your active sheet grids to map the roster.</li>
+          <li><code>https://www.googleapis.com/auth/calendar</code> or <code>calendar.events</code> - To create, update, and remove calendar entries for your team members on your designated calendars.</li>
+          <li><code>https://www.googleapis.com/auth/script.container.ui</code> - To render the HTML configuration sidebar within Google Spreadsheets.</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <h2>6. Data Retention and Deletion</h2>
+        <p>All configuration settings are saved inside the spreadsheet itself (via Apps Script PropertiesService). Deleting the spreadsheet or uninstalling the add-on will permanently delete all saved configuration settings. Since we store no user data on external servers, we retain no data backups when you remove the Service.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>7. Security of Your Data</h2>
+        <p>The Service relies on Google's robust security protocols to protect your spreadsheet and calendar data. Access to RostraMind is secured through your Google Account credentials and Google's OAuth consent screen. We recommend sharing spreadsheets containing rosters only with trusted collaborators who require access.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>8. Consent Revocation</h2>
+        <p>You can revoke RostraMind's access to your Google account at any time by navigating to your <strong>Google Account Settings &rarr; Security &rarr; Third-party apps with account access</strong> and removing RostraMind permissions.</p>
+      </div>
+
+      <div class="doc-section">
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or how RostraMind handles developer permissions, please contact us at:</p>
+        <p style="font-weight: 600; color: var(--accent-indigo);"><a href="mailto:niyogi.labs@gmail.com" style="color: inherit; text-decoration: none;">niyogi.labs@gmail.com</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 id="footer-logo">Niyogi Labs</h3>
+          <p style="font-size: 0.9rem; margin-bottom: 0;">Automating productivity and operation management workflows.</p>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Butler Platform</h4>
+          <ul class="footer-links-list">
+            <li><a href="../butler/index.html" id="footer-link-butler-about">Platform Overview</a></li>
+            <li><a href="https://github.com/niyogilabs/Butler" target="_blank" rel="noopener" id="footer-link-butler-git">Butler (Core Engine)</a></li>
+            <li><a href="https://github.com/niyogilabs/ButlerManager" target="_blank" rel="noopener" id="footer-link-butlermgr-git">ButlerManager (Console)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">RostraMind Add-on</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" id="footer-link-rostramind-about">Add-on Details</a></li>
+            <li><a href="support.html" id="footer-link-rostramind-support">Setup &amp; Support</a></li>
+            <li><a href="terms.html" id="footer-link-rostramind-terms">Terms of Service</a></li>
+            <li><a href="privacy.html" id="footer-link-rostramind-privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.85rem; margin-bottom: 0;" id="copyright-text">&copy; 2026 Niyogi Labs. All rights reserved.</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0;">Hosted on GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

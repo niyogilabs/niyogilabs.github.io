@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niyogi Labs | Product & Service Portfolio</title>
+  <meta name="description" content="Discover premium automation platforms and Google Workspace utilities by Niyogi Labs. Featuring Butler, ButlerManager, and RostraMind Google Sheets add-on.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link" id="nav-logo">
+        <div class="logo-dot"></div>
+        Niyogi Labs
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-nav-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu-list">
+        <li><a href="index.html" class="nav-link active" id="nav-link-home">Home</a></li>
+        <li><a href="butler/index.html" class="nav-link" id="nav-link-butler">Butler Platform</a></li>
+        <li><a href="RostraMind/index.html" class="nav-link" id="nav-link-rostramind">RostraMind Add-on</a></li>
+        <li><a href="RostraMind/support.html" class="nav-link" id="nav-link-support">Support</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="container hero" id="main-hero">
+    <span class="badge" id="hero-badge">Product Ecosystem</span>
+    <h1 id="hero-title">Automating Business workflows &amp; Roster Syncing</h1>
+    <p class="tagline" id="hero-desc">Discover our state-of-the-art automation tools designed to customize business workflows and streamline Google Workspace scheduling.</p>
+    <div style="display: flex; gap: 16px; justify-content: center;">
+      <a href="#portfolio-grid" class="btn btn-primary" id="hero-cta-explore">Explore Our Portfolio</a>
+      <a href="https://github.com/niyogilabs" target="_blank" rel="noopener" class="btn btn-secondary" id="hero-cta-github">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        GitHub Profile
+      </a>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="section" id="portfolio-grid" style="padding-top: 20px;">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 8px;" id="portfolio-title">Featured Solutions</h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 40px auto;" id="portfolio-subtitle">Deploy custom platforms for your enterprise workflows or optimize calendar scheduling with Google Apps Script.</p>
+      
+      <div class="cards-grid">
+        <!-- Butler Card -->
+        <div class="glass-card" id="card-butler">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#indigoGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <defs>
+                <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#6366f1" />
+                  <stop offset="100%" stop-color="#8b5cf6" />
+                </linearGradient>
+              </defs>
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3 id="card-butler-title">Butler Platform</h3>
+          <p id="card-butler-desc">A powerful enterprise platform and backend manager that can be customized to match your exact business specifications. Streamlines business workflow execution and centralizes dashboard management.</p>
+          <div class="btn-group">
+            <a href="butler/index.html" class="btn btn-outline-indigo btn-sm" id="card-butler-btn-explore">Explore Butler</a>
+            <a href="https://github.com/niyogilabs/Butler" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" id="card-butler-btn-code" aria-label="GitHub Repository for Butler">Code</a>
+          </div>
+        </div>
+
+        <!-- RostraMind Card -->
+        <div class="glass-card" id="card-rostramind">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#cyanGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <defs>
+                <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#06b6d4" />
+                  <stop offset="100%" stop-color="#3b82f6" />
+                </linearGradient>
+              </defs>
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
+            </svg>
+          </div>
+          <h3 id="card-rostramind-title">RostraMind Add-on</h3>
+          <p id="card-rostramind-desc">Google Sheets roster calendar-blocking add-on. Connect spreadsheet schedules to team members' calendars, manage slot schedules with custom day overrides, and configure custom event reminders.</p>
+          <div class="btn-group">
+            <a href="RostraMind/index.html" class="btn btn-outline-indigo btn-sm" id="card-rostramind-btn-explore">Explore RostraMind</a>
+            <a href="RostraMind/support.html" class="btn btn-secondary btn-sm" id="card-rostramind-btn-support">Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 id="footer-logo">Niyogi Labs</h3>
+          <p style="font-size: 0.9rem; margin-bottom: 0;">Automating productivity and operation management workflows.</p>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Butler Platform</h4>
+          <ul class="footer-links-list">
+            <li><a href="butler/index.html" id="footer-link-butler-about">Platform Overview</a></li>
+            <li><a href="https://github.com/niyogilabs/Butler" target="_blank" rel="noopener" id="footer-link-butler-git">Butler (Core Engine)</a></li>
+            <li><a href="https://github.com/niyogilabs/ButlerManager" target="_blank" rel="noopener" id="footer-link-butlermgr-git">ButlerManager (Console)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">RostraMind Add-on</h4>
+          <ul class="footer-links-list">
+            <li><a href="RostraMind/index.html" id="footer-link-rostramind-about">Add-on Details</a></li>
+            <li><a href="RostraMind/support.html" id="footer-link-rostramind-support">Setup &amp; Support</a></li>
+            <li><a href="RostraMind/terms.html" id="footer-link-rostramind-terms">Terms of Service</a></li>
+            <li><a href="RostraMind/privacy.html" id="footer-link-rostramind-privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.85rem; margin-bottom: 0;" id="copyright-text">&copy; 2026 Niyogi Labs. All rights reserved.</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0;">Hosted on GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

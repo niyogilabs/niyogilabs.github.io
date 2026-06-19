@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butler Platform | Niyogi Labs</title>
+  <meta name="description" content="Customizable operations and workflow automation platform. Explore Butler (core engine) and ButlerManager (administrative console) on GitHub.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo-link" id="nav-logo">
+        <div class="logo-dot"></div>
+        Niyogi Labs
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-nav-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu-list">
+        <li><a href="../index.html" class="nav-link" id="nav-link-home">Home</a></li>
+        <li><a href="index.html" class="nav-link active" id="nav-link-butler">Butler Platform</a></li>
+        <li><a href="../RostraMind/index.html" class="nav-link" id="nav-link-rostramind">RostraMind Add-on</a></li>
+        <li><a href="../RostraMind/support.html" class="nav-link" id="nav-link-support">Support</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="container hero" id="butler-hero">
+    <span class="badge" id="butler-badge">Customizable Platform</span>
+    <h1 id="butler-title" class="text-gradient text-indigo-purple">Meet the Butler Platform</h1>
+    <p class="tagline" id="butler-desc">A premium, dual-layer developer and management ecosystem built to orchestrate and scale business processes. Completely adaptable through custom development.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="mailto:niyogi.labs@gmail.com?subject=Butler%20Customization%20Inquiry" class="btn btn-primary" id="butler-cta-contact">Request Paid Customization</a>
+      <a href="https://github.com/niyogilabs/Butler" target="_blank" rel="noopener" class="btn btn-secondary" id="butler-cta-core">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        Butler (Core Engine)
+      </a>
+      <a href="https://github.com/niyogilabs/ButlerManager" target="_blank" rel="noopener" class="btn btn-secondary" id="butler-cta-mgr">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        ButlerManager (Console)
+      </a>
+    </div>
+  </section>
+
+  <!-- Platform Overview -->
+  <section class="section" style="padding-top: 10px;" id="butler-architecture">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 40px;" id="arch-title">Two Parts, One Ecosystem</h2>
+      
+      <div class="cards-grid">
+        <!-- Butler Engine -->
+        <div class="glass-card" id="card-butler-engine">
+          <h3 id="engine-title" style="color: var(--accent-indigo);">1. The Butler Engine</h3>
+          <p id="engine-desc">The core backend engine that drives all automated workflows, integrations, and business processes. It operates silently in the background, serving as the central hub of your digital operations.</p>
+          <ul style="color: var(--text-sub); margin-left: 20px; margin-bottom: 24px; font-size: 0.95rem;">
+            <li style="margin-bottom: 8px;">State-of-the-art workflow execution</li>
+            <li style="margin-bottom: 8px;">Highly secure data storage and transactional API</li>
+            <li style="margin-bottom: 8px;">Seamless external tool integration (Slack, Stripe, CRM)</li>
+            <li style="margin-bottom: 8px;">Robust, extensible open-source architecture</li>
+          </ul>
+          <a href="https://github.com/niyogilabs/Butler" target="_blank" rel="noopener" class="btn btn-outline-indigo btn-sm" style="align-self: flex-start;" id="engine-repo-link">View Core Codebase</a>
+        </div>
+
+        <!-- Butler Manager -->
+        <div class="glass-card" id="card-butler-manager">
+          <h3 id="manager-title" style="color: var(--accent-purple);">2. ButlerManager Console</h3>
+          <p id="manager-desc">The executive cockpit and control dashboard for Butler. It provides a visual dashboard to manage settings, monitor workflows, audit logs, and trigger custom routines.</p>
+          <ul style="color: var(--text-sub); margin-left: 20px; margin-bottom: 24px; font-size: 0.95rem;">
+            <li style="margin-bottom: 8px;">Clean, modern UI for administrators</li>
+            <li style="margin-bottom: 8px;">Real-time workflow monitoring and metrics</li>
+            <li style="margin-bottom: 8px;">User permissions and access controls</li>
+            <li style="margin-bottom: 8px;">Direct management of Butler engine instances</li>
+          </ul>
+          <a href="https://github.com/niyogilabs/ButlerManager" target="_blank" rel="noopener" class="btn btn-outline-indigo btn-sm" style="align-self: flex-start;" id="manager-repo-link">View Console Codebase</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customization Model -->
+  <section class="section" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border-subtle);" id="butler-customization">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 12px;" id="custom-title">Tailored to Your Specifications</h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 48px auto;" id="custom-subtitle">We believe business tools should mold to your workflows, not the other way around. Customize Butler through paid service packages.</p>
+      
+      <div class="feature-box">
+        <div class="feature-item" id="custom-item-workflow">
+          <div class="feature-title">
+            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Custom Workflows &amp; Rules
+          </div>
+          <p style="font-size:0.95rem; margin-bottom: 0;">We build proprietary algorithms and business rules specific to your logistics, operations, or staff schedules directly into your private Butler instance.</p>
+        </div>
+        
+        <div class="feature-item" id="custom-item-branding">
+          <div class="feature-title">
+            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            White-Label &amp; UI Styling
+          </div>
+          <p style="font-size:0.95rem; margin-bottom: 0;">Get a fully custom-branded version of ButlerManager with your company's logos, styling, typography, and domain name integration.</p>
+        </div>
+        
+        <div class="feature-item" id="custom-item-api">
+          <div class="feature-title">
+            <svg class="feature-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Proprietary Integrations
+          </div>
+          <p style="font-size:0.95rem; margin-bottom: 0;">Connect your Butler ecosystem to proprietary database tables, internal ERP networks, or legacy vendor APIs securely.</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 50px;">
+        <div class="glass-card" style="max-width: 600px; margin: 0 auto; padding: 32px; border-color: rgba(99, 102, 241, 0.3);" id="butler-cta-box">
+          <h3 id="cta-box-title" style="margin-bottom: 8px;">Ready to automate your operations?</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 24px;">Send us your project requirements, and we'll draft a custom development plan and pricing quote tailored to your timeline.</p>
+          <a href="mailto:niyogi.labs@gmail.com?subject=Butler%20Customization%20Inquiry" class="btn btn-primary" id="butler-cta-send-email">Get in Touch: niyogi.labs@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 id="footer-logo">Niyogi Labs</h3>
+          <p style="font-size: 0.9rem; margin-bottom: 0;">Automating productivity and operation management workflows.</p>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Butler Platform</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" id="footer-link-butler-about">Platform Overview</a></li>
+            <li><a href="https://github.com/niyogilabs/Butler" target="_blank" rel="noopener" id="footer-link-butler-git">Butler (Core Engine)</a></li>
+            <li><a href="https://github.com/niyogilabs/ButlerManager" target="_blank" rel="noopener" id="footer-link-butlermgr-git">ButlerManager (Console)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">RostraMind Add-on</h4>
+          <ul class="footer-links-list">
+            <li><a href="../RostraMind/index.html" id="footer-link-rostramind-about">Add-on Details</a></li>
+            <li><a href="../RostraMind/support.html" id="footer-link-rostramind-support">Setup &amp; Support</a></li>
+            <li><a href="../RostraMind/terms.html" id="footer-link-rostramind-terms">Terms of Service</a></li>
+            <li><a href="../RostraMind/privacy.html" id="footer-link-rostramind-privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.85rem; margin-bottom: 0;" id="copyright-text">&copy; 2026 Niyogi Labs. All rights reserved.</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0;">Hosted on GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
