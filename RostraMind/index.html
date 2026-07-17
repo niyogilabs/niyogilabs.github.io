@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RostraMind | Niyogi Labs</title>
   <meta name="description" content="Google Sheets roster calendar-sync. Connect spreadsheets to Google Calendars with custom slots, overrides, and reminders. Free for up to 15 users.">
+  <link rel="canonical" href="https://niyogilabs.com/RostraMind/">
+  <meta name="referrer" content="no-referrer-when-downgrade">
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
@@ -26,21 +28,41 @@
         <li><a href="../index.html" class="nav-link" id="nav-link-home">Home</a></li>
         <li><a href="../butler/index.html" class="nav-link" id="nav-link-butler">Butler Platform</a></li>
         <li><a href="index.html" class="nav-link active" id="nav-link-rostramind">RostraMind</a></li>
-        <li><a href="support.html" class="nav-link" id="nav-link-support">Support</a></li>
       </ul>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="container hero" id="rostramind-hero">
+  <section class="container hero" id="rostramind-hero" style="padding-bottom: 20px;">
+    <div style="margin-bottom: 20px;">
+      <img src="imgs/rostramind_emblem.png" alt="RostraMind Emblem" style="width: 100px; height: 100px; object-fit: contain; border-radius: 20px; box-shadow: var(--shadow-glow), 0 8px 30px rgba(6, 182, 212, 0.25); border: 1px solid rgba(6, 182, 212, 0.2);">
+    </div>
     <span class="badge" id="rostramind-badge">Google Sheets Scheduling</span>
     <h1 id="rostramind-title" class="text-gradient text-cyan-blue">Automate Enterprise Workflows from Google Sheets</h1>
-    <p class="tagline" id="rostramind-desc">RostraMind is a Google Sheets add-on that can be installed from the Google Workspace Marketplace. It converts roster schedules in your Google Sheets into calendar invites sent directly to the team members specified in the sheet on the slots specified in the roster.</p>
-    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-      <a href="support.html" class="btn btn-primary" id="rostramind-cta-setup">View Setup &amp; Support Guide</a>
-      <a href="privacy.html" class="btn btn-secondary" id="rostramind-cta-privacy">Privacy Policy</a>
-      <a href="terms.html" class="btn btn-secondary" id="rostramind-cta-terms">Terms of Service</a>
+    <p class="tagline" id="rostramind-desc">RostraMind is an easy-to-use Google Sheets add-on that allows you to block calendars of your employees or customers based on the duty roster or appointment charts you prepare. With minimal configuration and zero complex app setup, it manages events and triggers notifications directly from Google Sheets.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+      <a href="https://workspace.google.com/marketplace/app/rostramind/712259088045" target="_blank" rel="noopener" class="btn btn-primary" id="rostramind-cta-install" style="box-shadow: 0 4px 14px rgba(6, 182, 212, 0.4); background: var(--gradient-cyan-blue);">Install RostraMind</a>
+      <a href="support.html" class="btn btn-secondary" id="rostramind-cta-setup">Setup &amp; Support Guide</a>
     </div>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="privacy.html" class="btn btn-secondary btn-sm" id="rostramind-cta-privacy">Privacy Policy</a>
+      <a href="terms.html" class="btn btn-secondary btn-sm" id="rostramind-cta-terms">Terms of Service</a>
+    </div>
+  </section>
+
+  <!-- Walkthrough Video Section -->
+  <section class="container" style="padding: 20px 24px; text-align: center;" id="rostramind-video-section">
+    <a href="https://www.youtube.com/watch?v=5AmEDtrY808" target="_blank" rel="noopener" class="video-placeholder-link" style="text-decoration: none; display: block; max-width: 720px; margin: 0 auto 20px auto;" id="rostramind-video-link">
+      <div class="video-placeholder-box" style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 16px; background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%), url('https://img.youtube.com/vi/5AmEDtrY808/0.jpg') center/cover no-repeat; border: 1px solid rgba(6, 182, 212, 0.3); box-shadow: var(--shadow-glow), var(--shadow-lg); transition: var(--transition-smooth); overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(2, 3, 8, 0.45); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; transition: var(--transition-smooth);" class="video-placeholder-overlay">
+          <div style="width: 72px; height: 72px; background: var(--gradient-cyan-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(6, 182, 212, 0.5); transition: var(--transition-smooth);" class="play-btn-circle">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="none" style="margin-left: 4px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </div>
+          <span style="color: white; font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Watch Setup Walkthrough Video</span>
+          <span style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; background: rgba(0,0,0,0.4); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">Opens in YouTube &nearr;</span>
+        </div>
+      </div>
+    </a>
   </section>
 
   <!-- Product Features -->
@@ -106,11 +128,79 @@
     </div>
   </section>
 
+  <!-- Customer Segments Section -->
+  <section class="section" style="border-top: 1px solid var(--border-subtle); background: rgba(255, 255, 255, 0.01);" id="rostramind-segments">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 12px;">Who is RostraMind For?</h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 40px auto; color: var(--text-sub);">Tailored scheduling automation for teams, freelancers, and businesses.</p>
+      
+      <div class="cards-grid" style="margin-top: 20px;">
+        <!-- Segment 1: For Teams -->
+        <div class="glass-card" id="segment-teams">
+          <div class="card-icon" style="background: rgba(6, 182, 212, 0.1); color: var(--accent-cyan);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <h3>For Internal Teams</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 0;">Juggling between multiple spreadsheets to find shifts? Team leaders get a birds-eye view of schedules in the roster, while team members get all tasks synchronized automatically into their primary calendar view.</p>
+        </div>
+
+        <!-- Segment 2: Globally Distributed Teams & Freelancers -->
+        <div class="glass-card" id="segment-freelancers">
+          <div class="card-icon" style="background: rgba(6, 182, 212, 0.1); color: var(--accent-cyan);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <h3>Distributed Teams &amp; Freelancers</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 0;">Stop manually calculating timezone offsets for client meetings or shifts. Set schedules in your local timezone and let RostraMind handle Google Calendar timezone conversions seamlessly.</p>
+        </div>
+
+        <!-- Segment 3: Small Businesses -->
+        <div class="glass-card" id="segment-businesses">
+          <div class="card-icon" style="background: rgba(6, 182, 212, 0.1); color: var(--accent-cyan);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+          </div>
+          <h3>Small Businesses</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 0;">Get a single central view of all customer appointments. Customers receive timely native notifications directly on their smartphones, drastically reducing forgotten appointments and improving retention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy & Smartphone Notifications Section -->
+  <section class="section" style="border-top: 1px solid var(--border-subtle); background: radial-gradient(circle at center, rgba(6, 182, 212, 0.05) 0%, rgba(6, 8, 20, 0) 70%);" id="rostramind-privacy-notifications">
+    <div class="container">
+      <div style="display: flex; gap: 48px; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 1.2; min-width: 300px;">
+          <span class="badge" style="background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.2); color: var(--accent-cyan);">Zero App Friction</span>
+          <h2 style="margin-bottom: 20px;">Privacy-First Smartphone Reminders</h2>
+          <p>RostraMind works directly with pre-installed calendar applications (like Google Calendar or Apple Calendar) on smartphones. Team members and customers receive fully configurable event notifications and reminders automatically, without downloading any third-party apps.</p>
+          <p>This design offers low friction and addresses privacy concerns: no external servers scan scheduling data, and attendees only need to provide their email address. Everything is secured within your own Google Workspace account.</p>
+        </div>
+        <div style="flex: 0.8; min-width: 300px;">
+          <div class="glass-card" style="padding: 32px; border-color: rgba(6, 182, 212, 0.2);" id="privacy-metrics-card">
+            <h3 style="color: var(--accent-cyan); display: flex; align-items: center; gap: 10px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Zero Server Storage
+            </h3>
+            <p style="font-size: 0.95rem; margin-bottom: 16px;">We do not host backend databases. Your shift grids, team email lists, and schedules remain stored solely in Google Sheets and Calendar.</p>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+              <p style="font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Why users love it:</p>
+              <ul style="list-style: none; padding-left: 0; color: var(--text-sub); font-size: 0.9rem; display: flex; flex-direction: column; gap: 8px;">
+                <li style="display: flex; gap: 8px;"><svg style="color: var(--accent-cyan);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> No passwords to manage</li>
+                <li style="display: flex; gap: 8px;"><svg style="color: var(--accent-cyan);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Low onboarding barrier</li>
+                <li style="display: flex; gap: 8px;"><svg style="color: var(--accent-cyan);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Standard native push alerts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Freemium Pricing Section -->
   <section class="section pricing-section" id="rostramind-pricing" style="border-top:1px solid var(--border-subtle)">
     <div class="container">
       <h2 style="text-align: center; margin-bottom: 12px;" id="pricing-title">Simple Freemium Pricing</h2>
-      <p style="text-align: center; max-width: 600px; margin: 0 auto 32px auto;" id="pricing-subtitle">Select the plan that fits your administrative roster requirements.</p>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 32px auto;" id="pricing-subtitle">RostraMind is free to use for up to medium-sized teams, with nominal pricing for large teams compared to the massive time saving.</p>
       
       <!-- Side by Side Pricing Cards Grid -->
       <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
