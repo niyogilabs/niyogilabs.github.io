@@ -1,6 +1,11 @@
 // Synchronously initialize theme from localStorage or default to 'light'
 (function() {
-  const savedTheme = localStorage.getItem('niyogi-theme') || 'light';
+  let savedTheme = 'light';
+  try {
+    savedTheme = localStorage.getItem('niyogi-theme') || 'light';
+  } catch (e) {
+    console.warn('Storage access blocked, defaulting to light theme.');
+  }
   document.documentElement.setAttribute('data-theme', savedTheme);
 })();
 
@@ -16,7 +21,11 @@ class NiyogiHeader extends HTMLElement {
       }
     } else {
       const path = window.location.pathname.toLowerCase();
-      if (path.includes('/butler/') || path.includes('/rostramind/') || path.includes('/dutyremind/')) {
+      if (
+        path.includes('/butler') || 
+        path.includes('/rostramind') || 
+        path.includes('/dutyremind')
+      ) {
         prefix = "../";
       }
     }
@@ -76,7 +85,11 @@ class NiyogiHeader extends HTMLElement {
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('niyogi-theme', newTheme);
+        try {
+          localStorage.setItem('niyogi-theme', newTheme);
+        } catch (e) {
+          console.warn('Failed to persist theme state in storage:', e);
+        }
       });
     }
   }
@@ -93,7 +106,11 @@ class NiyogiFooter extends HTMLElement {
       }
     } else {
       const path = window.location.pathname.toLowerCase();
-      if (path.includes('/butler/') || path.includes('/rostramind/') || path.includes('/dutyremind/')) {
+      if (
+        path.includes('/butler') || 
+        path.includes('/rostramind') || 
+        path.includes('/dutyremind')
+      ) {
         prefix = "../";
       }
     }
