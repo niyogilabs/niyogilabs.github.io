@@ -36,7 +36,7 @@ class NiyogiHeader extends HTMLElement {
       <header>
         <div class="container nav-container">
           <a href="${prefix}index.html" class="logo-link" id="nav-logo" style="display: flex; align-items: center; gap: 8px;">
-            <img src="${prefix}imgs/niyogi_labs_logo.png" alt="Niyogi Labs Logo" style="width: 24px; height: 24px; object-fit: contain;">
+            <img src="${prefix}imgs/niyogi_labs_art.png" alt="Niyogi Labs Logo" style="width: 24px; height: 24px; object-fit: contain;">
             Niyogi Labs
           </a>
           <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-nav-btn">
@@ -47,7 +47,7 @@ class NiyogiHeader extends HTMLElement {
           <ul class="nav-menu" id="nav-menu-list">
             <li><a href="${prefix}index.html" class="nav-link ${activePage === 'home' ? 'active' : ''}" id="nav-link-home">Home</a></li>
             <li><a href="${prefix}butler/index.html" class="nav-link ${activePage === 'butler' ? 'active' : ''}" id="nav-link-butler">Butler Platform</a></li>
-            <li><a href="${prefix}RostraMind/index.html" class="nav-link ${activePage === 'rostramind' || activePage === 'dutyremind' ? 'active' : ''}" id="nav-link-rostramind">RostraMind</a></li>
+            <li><a href="${prefix}dutyremind/index.html" class="nav-link ${activePage === 'dutyremind' || activePage === 'rostramind' ? 'active' : ''}" id="nav-link-dutyremind">DutyRemind</a></li>
             <li style="display: flex; align-items: center;">
               <button class="theme-toggle" aria-label="Toggle light/dark theme" id="theme-toggle-btn" style="background: none; border: none; cursor: pointer; color: var(--text-main); display: flex; align-items: center; justify-content: center; padding: 4px; transition: var(--transition-smooth);">
                 <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -121,7 +121,7 @@ class NiyogiFooter extends HTMLElement {
           <div class="footer-grid">
             <div class="footer-brand">
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-                <img src="${prefix}imgs/niyogi_labs_logo.png" alt="Niyogi Labs Logo" style="width: 32px; height: 32px; object-fit: contain;">
+                <img src="${prefix}imgs/niyogi_labs_art.png" alt="Niyogi Labs Logo" style="width: 32px; height: 32px; object-fit: contain;">
                 <h3 id="footer-logo" style="margin-bottom: 0;">Niyogi Labs</h3>
               </div>
               <p style="font-size: 0.9rem; margin-bottom: 0;">Simplifying life through automation.</p>
@@ -135,12 +135,12 @@ class NiyogiFooter extends HTMLElement {
               </ul>
             </div>
             <div>
-              <h4 class="footer-links-title">RostraMind</h4>
+              <h4 class="footer-links-title">DutyRemind</h4>
               <ul class="footer-links-list">
-                <li><a href="${prefix}RostraMind/index.html" id="footer-link-rostramind-about">Product Details</a></li>
-                <li><a href="${prefix}RostraMind/support.html" id="footer-link-rostramind-support">Setup &amp; Support</a></li>
-                <li><a href="${prefix}RostraMind/terms.html" id="footer-link-rostramind-terms">Terms of Service</a></li>
-                <li><a href="${prefix}RostraMind/privacy.html" id="footer-link-rostramind-privacy">Privacy Policy</a></li>
+                <li><a href="${prefix}dutyremind/index.html" id="footer-link-dutyremind-about">Product Details</a></li>
+                <li><a href="${prefix}dutyremind/support.html" id="footer-link-dutyremind-support">Setup &amp; Support</a></li>
+                <li><a href="${prefix}dutyremind/terms.html" id="footer-link-dutyremind-terms">Terms of Service</a></li>
+                <li><a href="${prefix}dutyremind/privacy.html" id="footer-link-dutyremind-privacy">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
