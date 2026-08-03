@@ -20,7 +20,7 @@
     <div class="doc-layout" id="privacy-document">
       <h1 id="privacy-title" style="font-size: 2.2rem; margin-bottom: 8px;">DutyRemind Privacy Policy</h1>
       <div class="doc-meta" id="privacy-meta">
-        Last Updated: June 26, 2026 &bull; Effective Date: June 26, 2026
+        Last Updated: August 3, 2026 &bull; Effective Date: August 3, 2026
       </div>
 
       <div class="doc-section">
@@ -36,18 +36,19 @@
           <li><strong>Google Calendar Data:</strong> The Service creates, modifies, and deletes calendar events on your primary or specified calendar to align with your roster. It only modifies calendar events that were created by the Service or match the configured event title.</li>
           <li><strong>Document Properties (Apps Script Storage):</strong> The Service saves configuration values (such as column indices, header row numbers, calendar IDs, and slot times) locally inside the spreadsheet's document storage property.</li>
           <li><strong>User Account Email:</strong> The Service accesses your Google account email address to verify licensing status and manage your active Pro or Enterprise subscription.</li>
+          <li><strong>Billing and Subscription Identifiers:</strong> We collect and store customer and subscription identifiers (specifically Stripe Customer IDs and Stripe Subscription IDs) in our secure database to connect your premium payment status to your Google account.</li>
         </ul>
       </div>
 
       <div class="doc-section">
         <h2>3. Server-Side Storage Exceptions</h2>
         <p><strong>DutyRemind schedules and roster data run entirely within the Google Apps Script ecosystem on Google's own cloud infrastructure.</strong></p>
-        <p>Niyogi Labs does not operate database servers that collect or store your spreadsheet rosters, team member calendar details, or calendar schedules. All scheduling calculations are executed locally within your spreadsheet script context. However, for licensing and billing verification, your Google account email address may be stored in our secure database or transmitted to and stored by our trusted third-party payment and subscription providers for subscription management.</p>
+        <p>Niyogi Labs does not operate database servers that collect or store your spreadsheet rosters, team member calendar details, or calendar schedules. All scheduling calculations are executed locally within your spreadsheet script context. However, for licensing and billing verification, we store your Google account email address, active subscription tier, and associated billing identifiers (such as Stripe Customer and Subscription IDs) in our secure database. <strong>We never collect, transmit, or store raw financial information (such as credit card numbers or bank accounts) on our servers; all transaction processing is handled directly and securely by our payment processor (Stripe).</strong></p>
       </div>
 
       <div class="doc-section">
         <h2>4. Information Sharing and Disclosure</h2>
-        <p>Except for your Google account email address (which is shared with trusted payment and subscription management providers for managing your licensing and billing), we do not share, sell, trade, or distribute your spreadsheet data, staff roster emails, or calendar entries. All scheduling network communications are conducted directly and securely between your Google environment and Google API endpoints.</p>
+        <p>Except for the billing identifiers and email address required to manage your subscription state with our payment processor (Stripe), we do not share, sell, trade, or distribute your spreadsheet data, staff roster emails, or calendar entries. All scheduling network communications are conducted directly and securely between your Google environment and Google API endpoints.</p>
       </div>
 
       <div class="doc-section">
@@ -63,7 +64,7 @@
 
       <div class="doc-section">
         <h2>6. Data Retention and Deletion</h2>
-        <p>All configuration settings are saved inside the spreadsheet itself (via Apps Script PropertiesService). Deleting the spreadsheet or uninstalling the Service will permanently delete all saved configuration settings. Since we store no user data on external servers, we retain no data backups when you remove the Service.</p>
+        <p>All configuration settings are saved inside the spreadsheet itself (via Apps Script PropertiesService). Deleting the spreadsheet or uninstalling the Service will permanently delete all saved configuration settings. While all roster configurations are stored locally inside the spreadsheet, your user account email address is retained on our database for license verification. If you uninstall the Service and wish to have your email permanently deleted from our database, please <a href="mailto:niyogi.labs@gmail.com">contact us</a>.</p>
       </div>
 
       <div class="doc-section">
