@@ -110,7 +110,21 @@
 <body>
 
   <!-- Navigation -->
-  <niyogi-header active="butler"></niyogi-header>
+  <niyogi-header active="butler">
+    <header>
+      <div class="container nav-container">
+        <a href="../index.html" class="logo-link" style="display: flex; align-items: center; gap: 8px;">
+          <img src="../imgs/niyogi_labs_art.png" alt="Niyogi Labs Logo" style="width: 24px; height: 24px; object-fit: contain;">
+          Niyogi Labs
+        </a>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../butler/index.html" class="nav-link active">Butler Platform</a></li>
+          <li><a href="../dutyremind/index.html" class="nav-link">DutyRemind</a></li>
+        </ul>
+      </div>
+    </header>
+  </niyogi-header>
 
   <!-- Hero Section -->
   <section class="container hero" id="butler-hero" style="padding-bottom: 10px;">
@@ -392,7 +406,42 @@
   </section>
 
   <!-- Global Footer -->
-  <niyogi-footer></niyogi-footer>
+  <niyogi-footer>
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <img src="../imgs/niyogi_labs_art.png" alt="Niyogi Labs Logo" style="width: 32px; height: 32px; object-fit: contain;">
+              <h3 style="margin-bottom: 0;">Niyogi Labs</h3>
+            </div>
+            <p style="font-size: 0.9rem; margin-bottom: 0;">Simplifying life through automation.</p>
+          </div>
+          <div>
+            <h4 class="footer-links-title">Butler Platform</h4>
+            <ul class="footer-links-list">
+              <li><a href="../butler/index.html">Platform Overview</a></li>
+              <li><a href="https://github.com/niyogilabs/Butler" target="_blank" rel="noopener">Butler (Device Firmware)</a></li>
+              <li><a href="https://github.com/niyogilabs/ButlerManager" target="_blank" rel="noopener">ButlerManager (Android App)</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-links-title">DutyRemind</h4>
+            <ul class="footer-links-list">
+              <li><a href="../dutyremind/index.html">Product Details</a></li>
+              <li><a href="../dutyremind/support.html">Setup &amp; Support</a></li>
+              <li><a href="../dutyremind/terms.html">Terms of Service</a></li>
+              <li><a href="../dutyremind/privacy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p style="font-size: 0.85rem; margin-bottom: 0;">&copy; 2026 Niyogi Labs. All rights reserved.</p>
+          <p style="font-size: 0.85rem; margin-bottom: 0;">Hosted on GitHub Pages</p>
+        </div>
+      </div>
+    </footer>
+  </niyogi-footer>
 
   <script src="../main.js"></script>
 </body>
