@@ -226,6 +226,69 @@ header {
 .nav-link.active {
   color: var(--accent-indigo);
 }
+/* Dropdown Menu CSS */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.dropdown-caret {
+  transition: transform var(--transition-smooth);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 8px 0;
+  min-width: 160px;
+  box-shadow: var(--shadow-glow), 0 10px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.dropdown-item:hover {
+  color: var(--text-main);
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+/* Show on Hover / Focus */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(4px);
+  }
+
+  .dropdown:hover .dropdown-caret {
+    transform: rotate(180deg);
+  }
+}
 
 /* Mobile Toggle */
 .mobile-toggle {
@@ -726,6 +789,32 @@ footer {
   
   .cards-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Mobile Dropdown styles */
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 2px solid var(--accent-indigo);
+    border-radius: 0;
+    margin-top: 8px;
+    padding: 4px 0;
+    width: 100%;
+    min-width: 0;
+    opacity: 1;
+    pointer-events: auto;
+    display: none;
+  }
+  
+  .dropdown.active-mobile .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown.active-mobile .dropdown-caret {
+    transform: rotate(180deg);
   }
 }
 
