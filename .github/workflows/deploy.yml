@@ -35,7 +35,7 @@ jobs:
       - name: Upload Static Website Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'wavebench'
+          path: './'
 
       - name: Deploy to GitHub Pages
         id: deployment
