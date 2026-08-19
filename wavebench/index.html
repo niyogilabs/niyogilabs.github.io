@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>WaveBench | The Hardware Perception Layer for AI Coding Agents</title>
+  <meta name="description" content="WaveBench by Niyogi Labs is the hardware perception layer for AI coding agents. Performs deep waveform analysis & signal debugging, delivering hardware-specific debug hints via A2A protocol.">
+  <meta name="keywords" content="WaveBench, Niyogi Labs, A2A Protocol, Hardware Perception Layer, Waveform Analysis, Signal Debugging, Hardware Debug Hints, Context Rot, Oscilloscope AI, Model Context Protocol, SI PI Debug">
+  <meta name="author" content="Niyogi Labs">
+  <link rel="canonical" href="https://niyogilabs.com/wavebench/">
+
+  <!-- Robots & AI Crawler Directives (GEO & Search Optimization) -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="bingbot" content="index, follow">
+  
+  <!-- Open Graph / Facebook / LinkedIn Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Niyogi Labs">
+  <meta property="og:url" content="https://niyogilabs.com/wavebench/">
+  <meta property="og:title" content="WaveBench | The Hardware Perception Layer for AI Coding Agents">
+  <meta property="og:description" content="Keep your confidential source code, RTL, and chip IP 100% private on-premise. Offload waveform analysis & get hardware-specific debug hints via A2A protocol.">
+  <meta property="og:image" content="https://niyogilabs.com/wavebench/hero_mockup.png">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@niyogilabs">
+  <meta name="twitter:title" content="WaveBench | The Hardware Perception Layer for AI Coding Agents">
+  <meta name="twitter:description" content="Keep your source code & RTL 100% private on-premise. WaveBench delivers signal-level debug hints to AI coding agents over A2A protocol.">
+  <meta name="twitter:image" content="https://niyogilabs.com/wavebench/hero_mockup.png">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Niyogi Labs Modular Stylesheet & Assets -->
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../navigation.js"></script>
+  
+  <!-- Supabase JS Client (v2 CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- JSON-LD Structured Data for Search Engines & LLM RAG Indexers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://niyogilabs.com/#organization",
+        "name": "Niyogi Labs",
+        "url": "https://niyogilabs.com",
+        "logo": "https://niyogilabs.com/wavebench/hero_mockup.png",
+        "sameAs": [
+          "https://twitter.com/niyogilabs",
+          "https://github.com/niyogilabs"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://niyogilabs.com/wavebench/#software",
+        "name": "WaveBench",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform, Cloud Agent, A2A Protocol",
+        "author": {
+          "@id": "https://niyogilabs.com/#organization"
+        },
+        "description": "WaveBench is an A2A-native Signal Analysis & Hardware Debug Intelligence Layer. Performs waveform analysis, signal-level debugging, and provides hardware-specific debug hints to AI coding agents without context pollution or source code exposure.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/PreOrder"
+        },
+        "featureList": [
+          "3-Tier Decoupled Architecture (Main Agent, Local Tool MCPs, WaveBench Cloud Agent)",
+          "100% Source Code & RTL Privacy (On-Premise Code Control)",
+          "Zero Context Pollution for Main Coding Agent",
+          "Deep Waveform Analysis & Signal-Level Debugging",
+          "Hardware-Specific Debug Hint Generation",
+          "Multi-Channel Timing Skew & Setup/Hold Violation Analysis",
+          "Instrument Scale & Trigger Guidance Helper"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://niyogilabs.com/wavebench/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is WaveBench?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "WaveBench by Niyogi Labs is a specialized Cloud AI Intelligence Agent accessible via A2A (Agent-to-Agent) protocol that acts as the hardware perception layer for AI coding agents. It performs deep waveform analysis and signal-level debugging, returning hardware-specific debug hints."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does WaveBench require access to my source code or RTL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. WaveBench operates on a 3-tier decoupled architecture where your firmware source code, RTL, and chip IP remain 100% on-premise in your lab. Only anonymized numerical signal vectors are transmitted over A2A protocol."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does WaveBench prevent context pollution in AI coding agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raw 50,000-sample oscilloscope traces severely pollute context windows. WaveBench digests raw waveforms in isolation and returns structured ~200-token diagnostic verdicts and actionable hardware debug hints back to the main coding agent."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="light-theme">
+  <!-- Navigation Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo-link" id="nav-logo" style="display: flex; align-items: center; gap: 8px;">
+        <img src="../imgs/niyogi_labs_art.png" alt="Niyogi Labs Logo" style="width: 24px; height: 24px; object-fit: contain;">
+        Niyogi Labs
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-nav-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu-list">
+        <li><a href="../index.html" class="nav-link" id="nav-link-home">Home</a></li>
+        <li><a href="../butler/index.html" class="nav-link" id="nav-link-butler">Butler Platform</a></li>
+        <li><a href="../dutyremind/index.html" class="nav-link" id="nav-link-dutyremind">DutyRemind</a></li>
+        <li><a href="../wavebench/index.html" class="nav-link active" id="nav-link-wavebench">WaveBench</a></li>
+        <li class="dropdown" id="nav-dropdown-tools">
+          <a href="#" class="nav-link dropdown-toggle" id="nav-link-tools">
+            Tools
+            <svg class="dropdown-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 1l4 4 4-4" />
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="https://skillspector.niyogilabs.com/" class="dropdown-item" id="nav-link-skillspector" target="_blank" rel="noopener">Skill Spector</a></li>
+          </ul>
+        </li>
+        <li style="display: flex; align-items: center;">
+          <button class="theme-toggle" aria-label="Toggle light/dark theme" id="theme-toggle-btn" style="background: none; border: none; cursor: pointer; color: var(--text-main); display: flex; align-items: center; justify-content: center; padding: 4px; transition: var(--transition-smooth);">
+            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 1: Hero Section -->
+    <section class="hero-section">
+      <div class="glow-sphere sphere-1"></div>
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="pulse-dot"></span> A2A Protocol Hardware Intelligence Layer
+          </div>
+          <h1 class="hero-title">
+            The Hardware Perception Layer for <span class="text-gradient">AI Coding Agents</span>
+          </h1>
+          <p class="hero-subtitle">
+            Keep your source code, proprietary RTL, and chip IP 100% private in your access-controlled lab. WaveBench provides deep <strong>waveform analysis</strong> and <strong>signal-level debugging</strong>—delivering actionable, hardware-specific debug hints directly to your main coding agent over A2A protocol.
+          </p>
+          
+          <div class="hero-cta-group">
+            <a href="#signup-form" class="btn btn-primary btn-lg">
+              <span>Join Waitlist</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#demo" class="btn btn-secondary btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span>Live Demo</span>
+            </a>
+          </div>
+
+          <div class="hero-metrics-strip">
+            <div class="metric-item">
+              <span class="metric-value">Zero</span>
+              <span class="metric-label">Context Pollution</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-value">100%</span>
+              <span class="metric-label">Code, RTL & IP Privacy</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-value">Hardware Debug</span>
+              <span class="metric-label">Actionable Hints Delivered</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="card hero-image-card">
+            <div class="card-header-bar">
+              <div class="mac-buttons">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="card-title-text">WaveBench Cloud Agent — Signal Debug Intelligence</div>
+              <div class="status-indicator"><span class="status-dot"></span> CONNECTED VIA A2A</div>
+            </div>
+            <img src="hero_mockup.png" alt="WaveBench Oscilloscope Signal Analysis UI" class="hero-img" width="800" height="800">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Architecture & Combined USPs (Architecture Diagram + 3 Tiers + Waveform Debug USPs) -->
+    <section id="architecture" class="section architecture-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-pill">System Architecture & Core USPs</div>
+          <h2 class="section-title">Decoupled 3-Part Architecture & Unique Value</h2>
+          <p class="section-subtitle">How WaveBench isolates code control on-premise while providing expert signal-level debug hints over A2A protocol</p>
+        </div>
+
+        <!-- High Resolution Vector Block Diagram -->
+        <div class="card diagram-card text-center mb-10">
+          <div class="diagram-wrapper">
+            <img src="architecture_diagram.svg" alt="WaveBench System Architecture Block Diagram" class="architecture-diagram-img" width="800" height="450">
+          </div>
+        </div>
+
+        <!-- 3-Tier Component Breakdown Cards -->
+        <div class="architecture-details-grid mb-12">
+          <div class="card arch-detail-card">
+            <div class="arch-card-header">
+              <span class="location-badge badge-blue">Customer Premise (Lab)</span>
+              <h3>1. Main Debug Agent</h3>
+            </div>
+            <p>Runs in developer's IDE on-premise. Receives hardware-specific debug hints to fix firmware (C/C++/Rust) or logic setups without experiencing context pollution.</p>
+          </div>
+
+          <div class="card arch-detail-card">
+            <div class="arch-card-header">
+              <span class="location-badge badge-purple">Customer Premise (Lab)</span>
+              <h3>2. Local Tool MCPs & Board</h3>
+            </div>
+            <p>Attached directly to oscilloscopes and test equipment in the lab. Collects raw signal arrays and applies SCPI trigger adjustments.</p>
+          </div>
+
+          <div class="card arch-detail-card arch-card-highlight">
+            <div class="arch-card-header">
+              <span class="location-badge badge-green">WaveBench Cloud</span>
+              <h3>3. WaveBench AI Agent</h3>
+            </div>
+            <p>Specialized Cloud Intelligence Agent over A2A protocol. Performs waveform analysis and generates hardware-specific debug hints for the main coding agent.</p>
+          </div>
+        </div>
+
+        <!-- Combined USPs Subsection: Privacy, Signal-Level Debug & Hardware Hints -->
+        <div class="usps-subsection">
+          <h3 class="subsection-heading text-center">Core Unique Selling Propositions (USPs)</h3>
+          <div class="usps-grid">
+            <div class="card usp-card">
+              <div class="usp-icon">🔬</div>
+              <h4>Waveform Analysis & Signal Debug</h4>
+              <p>Deep physical waveform analysis detecting edge transitions, bus anomalies, voltage drops, power glitches, and signal timing flaws.</p>
+            </div>
+
+            <div class="card usp-card">
+              <div class="usp-icon">💡</div>
+              <h4>Hardware-Specific Debug Hints</h4>
+              <p>Delivers actionable, hardware-level recommendations directly to your main coding agent (e.g. pull-up values, series damping, clock phase polarity).</p>
+            </div>
+
+            <div class="card usp-card">
+              <div class="usp-icon">🛡️</div>
+              <h4>Source Code, RTL & IP Privacy</h4>
+              <p>Your firmware, proprietary RTL, and internal chip IP stay 100% on-premise inside your access-controlled lab. Only anonymized numerical signal vectors are analyzed by WaveBench.</p>
+            </div>
+
+            <div class="card usp-card">
+              <div class="usp-icon">🧹</div>
+              <h4>Zero Context Pollution</h4>
+              <p>Raw 50,000-sample traces pollute main debug agent context windows. WaveBench digests raw waveforms into concise ~200-token diagnostic verdicts.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Demo & Waitlist Registration (Combined Workspace & Form) -->
+    <section id="demo" class="section demo-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-pill">Interactive A2A Protocol Demo</div>
+          <h2 class="section-title">See WaveBench Signal Debug Hints Live</h2>
+          <p class="section-subtitle">Select a signal debug scenario to see how WaveBench performs waveform analysis and outputs hardware-specific debug hints.</p>
+        </div>
+
+        <div class="card demo-workspace mb-16">
+          <div class="demo-toolbar">
+            <label for="trace-select"><strong>Signal Debug Scenario:</strong></label>
+            <select id="trace-select" class="demo-select">
+              <option value="multichannel_timing">I2C / SPI Signal Timing & Setup Violation</option>
+              <option value="power_rail_transient">Power Rail Voltage Brownout & Switching Ripple</option>
+              <option value="improper_trigger">Signal-Level Trigger & Scope Scale Helper</option>
+            </select>
+            <button id="run-analysis-btn" class="btn btn-primary btn-sm">⚡ Run Signal Debug</button>
+          </div>
+
+          <div class="demo-grid">
+            <!-- Column 1: Waveform Visualizer -->
+            <div class="demo-panel">
+              <div class="panel-header">
+                <span class="panel-icon">📈</span> Target Board Signal Probe (Tool MCP)
+              </div>
+              <div class="canvas-container">
+                <canvas id="waveform-canvas" width="480" height="260"></canvas>
+              </div>
+              <div class="panel-footer-meta" id="trace-meta">
+                Channels: CH1 (SCLK), CH2 (MOSI) | Sample Rate: 500 MS/s
+              </div>
+            </div>
+
+            <!-- Column 2: WaveBench Signal Engine Logs -->
+            <div class="demo-panel">
+              <div class="panel-header">
+                <span class="panel-icon">⚙️</span> WaveBench Signal Analysis Engine Logs
+              </div>
+              <div class="console-box" id="console-output">
+                <div class="console-line info">[A2A] WaveBench Cloud Signal Debug Agent Ready...</div>
+                <div class="console-line info">[Session] Waiting for local Tool MCP trace submission...</div>
+              </div>
+            </div>
+
+            <!-- Column 3: A2A Agent Payload -->
+            <div class="demo-panel">
+              <div class="panel-header">
+                <span class="panel-icon">🤖</span> A2A Response Payload (Hardware Hints)
+              </div>
+              <pre class="json-code-box"><code id="json-output">// Click "Run Signal Debug" to see hardware-specific hints...</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Semantic FAQ & LLM RAG Indexer Section -->
+        <div id="faq" class="card faq-card mb-16">
+          <h3 class="subsection-heading text-center">Frequently Asked Questions</h3>
+          <div class="faq-grid">
+            <div class="faq-item">
+              <h4>What is WaveBench?</h4>
+              <p>WaveBench by Niyogi Labs is a specialized Cloud AI Intelligence Agent accessible via Agent-to-Agent (A2A) protocol that serves as the hardware perception layer for AI coding agents. It performs deep waveform analysis and signal-level debugging, returning actionable hardware-specific debug hints.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Does WaveBench require access to proprietary source code or RTL?</h4>
+              <p>No. WaveBench operates on a 3-tier decoupled architecture. Your firmware source code, RTL, and chip IP remain 100% on-premise in your lab. Only anonymized numerical signal vectors are transmitted over A2A protocol.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4>How does WaveBench prevent context pollution in AI coding agents?</h4>
+              <p>Loading 50,000 raw floating-point signal points into a main debug agent causes severe context rot. WaveBench processes waveforms in isolation and returns structured ~200-token diagnostic verdicts and hardware debug hints.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Which protocols does WaveBench support?</h4>
+              <p>WaveBench communicates over standard A2A (Agent-to-Agent) protocol and integrates with local tool Model Context Protocol (MCP) servers connected to physical test equipment (oscilloscopes, power supplies, logic analyzers).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registration Waitlist Form (Magic Link Authentication) -->
+        <div class="card signup-card-wrapper" id="signup-form">
+          <div class="signup-grid">
+            <div class="signup-info">
+              <div class="badge-pill">Niyogi Labs Waitlist</div>
+              <h2>Register Your Interest</h2>
+              <p>We will email a 1-click magic link to verify your work email address (no passwords required). Join our early interest list below.</p>
+              
+              <div class="benefit-check-list">
+                <div class="check-item">
+                  <span class="check-icon">✓</span> 100% Verified email registration via Magic Link
+                </div>
+                <div class="check-item">
+                  <span class="check-icon">✓</span> Receive product updates and availability announcements
+                </div>
+                <div class="check-item">
+                  <span class="check-icon">✓</span> Help shape the A2A signal analysis specification
+                </div>
+              </div>
+            </div>
+
+            <div class="signup-form-container">
+              <form id="pre-release-form" class="validation-form">
+                <div class="form-group">
+                  <label for="user-email">Work / Professional Email <span class="required">*</span></label>
+                  <input type="email" id="user-email" name="email" class="form-input" placeholder="engineering@company.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="user-role">Primary Focus <span class="required">*</span></label>
+                  <select id="user-role" name="role" class="form-input" required>
+                    <option value="" disabled selected>Select your focus...</option>
+                    <option value="Hardware R&D">Hardware R&D & Systems Engineering</option>
+                    <option value="Signal Integrity Specialist">Signal & Hardware Debug Specialist</option>
+                    <option value="AI Agent Developer">AI Coding Agent Developer (IDE / Tools)</option>
+                    <option value="Embedded Systems Dev">Embedded Systems / Firmware Engineer</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="user-equipment">What Test Equipment do you use in your lab?</label>
+                  <input type="text" id="user-equipment" name="equipment" class="form-input" placeholder="e.g. Oscilloscopes, Logic Analyzers, Power Supplies...">
+                </div>
+
+                <div class="form-group">
+                  <label>Which Capability is Most Essential to You? <span class="required">*</span></label>
+                  <div class="radio-options-grid">
+                    <label class="radio-card">
+                      <input type="radio" name="primary_feature" value="Hardware Debug Hints" checked>
+                      <span>Hardware-Specific Debug Hints for Coding Agent</span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="primary_feature" value="Context Rot Prevention">
+                      <span>Context Pollution Prevention for Main Agent</span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="primary_feature" value="Waveform Analysis">
+                      <span>Signal-Level Debugging & Waveform Analysis</span>
+                    </label>
+                  </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn btn-primary btn-block btn-lg">
+                  <span id="btn-text">Send Magic Link</span>
+                  <span id="btn-spinner" class="spinner hidden"></span>
+                </button>
+
+                <div id="form-status" class="form-status-message hidden"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+            <img src="../imgs/niyogi_labs_art.png" alt="Niyogi Labs Logo" style="width: 32px; height: 32px; object-fit: contain;">
+            <h3 id="footer-logo" style="margin-bottom: 0;">Niyogi Labs</h3>
+          </div>
+          <p style="font-size: 0.9rem; margin-bottom: 0;">Simplifying life through automation.</p>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Platforms</h4>
+          <ul class="footer-links-list">
+            <li><a href="../butler/index.html" id="footer-link-butler-about">Butler</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Products</h4>
+          <ul class="footer-links-list">
+            <li><a href="../dutyremind/index.html" id="footer-link-dutyremind-about">DutyRemind</a></li>
+            <li><a href="../wavebench/index.html" id="footer-link-wavebench-about">WaveBench</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Tools</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://skillspector.niyogilabs.com/" target="_blank" rel="noopener" id="footer-link-skillspector">Skill Spector</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.85rem; margin-bottom: 0;" id="copyright-text">&copy; 2026 Niyogi Labs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Configuration & Main Script -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

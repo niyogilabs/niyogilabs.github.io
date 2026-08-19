@@ -1,0 +1,42 @@
+name: Deploy WaveBench Landing Page to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Inject GitHub Secrets into config.js
+        run: |
+          sed -i "s|SUPABASE_URL_PLACEHOLDER|${{ secrets.SUPABASE_URL }}|g" wavebench/config.js
+          sed -i "s|SUPABASE_PUBLISHABLE_KEY_PLACEHOLDER|${{ secrets.SUPABASE_PUBLISHABLE_KEY }}|g" wavebench/config.js
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Static Website Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'wavebench'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
