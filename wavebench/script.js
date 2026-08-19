@@ -310,7 +310,7 @@ async function handleOAuthSignIn(providerName) {
     console.error(`OAuth error (${providerName}):`, err);
     if (statusMsg) {
       statusMsg.className = "form-status-message error";
-      statusMsg.textContent = `OAuth authentication failed: ${err.message || "Please check provider setup in Supabase Dashboard."}`;
+      statusMsg.textContent = "Authentication could not be completed. Please try signing in again.";
       statusMsg.classList.remove("hidden");
     }
   }
@@ -351,9 +351,20 @@ function initOAuthAuthState() {
 
         if (error) {
           console.error("Supabase Database Insert Error:", error);
+          
+          // Silently clean up stale deleted-user sessions (Code 23503 / foreign key constraint)
+          const isFkeyViolation = error.code === "23503" || (error.message && error.message.includes("foreign key"));
+
+          if (isFkeyViolation) {
+            console.warn("Stale session detected: user ID was deleted in Supabase Auth. Silently purging session...");
+            await supabaseClient.auth.signOut();
+            sessionStorage.removeItem("wavebench_draft_signup");
+            return;
+          }
+
           if (statusMsg) {
             statusMsg.className = "form-status-message error";
-            statusMsg.innerHTML = `⚠️ <strong>Database Policy Error:</strong> ${escapeHtml(error.message)}. Please check your RLS policies in Supabase SQL Editor.`;
+            statusMsg.textContent = "Unable to complete registration. Please try signing in again.";
             statusMsg.classList.remove("hidden");
           }
           return;
@@ -364,7 +375,7 @@ function initOAuthAuthState() {
 
         if (statusMsg) {
           statusMsg.className = "form-status-message success";
-          statusMsg.innerHTML = `🎉 <strong>OAuth Verified!</strong> Welcome ${escapeHtml(session.user.email)}. Your waitlist registration is confirmed in our database!`;
+          statusMsg.innerHTML = `🎉 <strong>Registration Confirmed!</strong> Welcome ${escapeHtml(session.user.email)}. Your waitlist registration is complete!`;
           statusMsg.classList.remove("hidden");
           statusMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }

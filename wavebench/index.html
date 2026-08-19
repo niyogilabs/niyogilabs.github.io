@@ -36,8 +36,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- Niyogi Labs Modular Stylesheet (Light Theme Default) -->
+  <!-- Niyogi Labs Modular Stylesheet & Assets -->
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="style.css">
+  <script src="../navigation.js"></script>
   
   <!-- Supabase JS Client (v2 CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -120,21 +123,40 @@
 </head>
 <body class="light-theme">
   <!-- Navigation Header -->
-  <header class="navbar">
+  <header>
     <div class="container nav-container">
-      <a href="#" class="brand-logo">
-        <span class="brand-badge">NIYOGI LABS</span>
-        <span class="brand-name">WaveBench<span class="dot">.ai</span></span>
+      <a href="../index.html" class="logo-link" id="nav-logo" style="display: flex; align-items: center; gap: 8px;">
+        <img src="../imgs/niyogi_labs_art.png" alt="Niyogi Labs Logo" style="width: 24px; height: 24px; object-fit: contain;">
+        Niyogi Labs
       </a>
-      <nav class="nav-menu">
-        <a href="#architecture">Architecture & USPs</a>
-        <a href="#demo">Live Demo</a>
-        <a href="#faq">FAQ</a>
-        <a href="#signup-form">Waitlist</a>
-      </nav>
-      <div class="nav-actions">
-        <a href="#signup-form" class="btn btn-primary btn-sm">Join Waitlist</a>
-      </div>
+      <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-nav-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu-list">
+        <li><a href="../index.html" class="nav-link" id="nav-link-home">Home</a></li>
+        <li><a href="../butler/index.html" class="nav-link" id="nav-link-butler">Butler Platform</a></li>
+        <li><a href="../dutyremind/index.html" class="nav-link" id="nav-link-dutyremind">DutyRemind</a></li>
+        <li><a href="../wavebench/index.html" class="nav-link active" id="nav-link-wavebench">WaveBench</a></li>
+        <li class="dropdown" id="nav-dropdown-tools">
+          <a href="#" class="nav-link dropdown-toggle" id="nav-link-tools">
+            Tools
+            <svg class="dropdown-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 1l4 4 4-4" />
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="https://skillspector.niyogilabs.com/" class="dropdown-item" id="nav-link-skillspector" target="_blank" rel="noopener">Skill Spector</a></li>
+          </ul>
+        </li>
+        <li style="display: flex; align-items: center;">
+          <button class="theme-toggle" aria-label="Toggle light/dark theme" id="theme-toggle-btn" style="background: none; border: none; cursor: pointer; color: var(--text-main); display: flex; align-items: center; justify-content: center; padding: 4px; transition: var(--transition-smooth);">
+            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+        </li>
+      </ul>
     </div>
   </header>
 
@@ -435,35 +457,40 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <a href="#" class="brand-logo">
-          <span class="brand-badge">NIYOGI LABS</span>
-          <span class="brand-name">WaveBench</span>
-        </a>
-        <p class="footer-tagline">The Hardware Perception Layer for AI Coding Agents.</p>
-      </div>
-
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <a href="#architecture">Architecture & USPs</a>
-          <a href="#demo">Live Demo</a>
-          <a href="#faq">FAQ</a>
-          <a href="#signup-form">Waitlist</a>
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+            <img src="../imgs/niyogi_labs_art.png" alt="Niyogi Labs Logo" style="width: 32px; height: 32px; object-fit: contain;">
+            <h3 id="footer-logo" style="margin-bottom: 0;">Niyogi Labs</h3>
+          </div>
+          <p style="font-size: 0.9rem; margin-bottom: 0;">Simplifying life through automation.</p>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="https://niyogilabs.com" target="_blank" rel="noopener">Niyogi Labs Home</a>
-          <a href="mailto:contact@niyogilabs.com">Contact Engineering</a>
+        <div>
+          <h4 class="footer-links-title">Platforms</h4>
+          <ul class="footer-links-list">
+            <li><a href="../butler/index.html" id="footer-link-butler-about">Butler</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Products</h4>
+          <ul class="footer-links-list">
+            <li><a href="../dutyremind/index.html" id="footer-link-dutyremind-about">DutyRemind</a></li>
+            <li><a href="../wavebench/index.html" id="footer-link-wavebench-about">WaveBench</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-links-title">Tools</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://skillspector.niyogilabs.com/" target="_blank" rel="noopener" id="footer-link-skillspector">Skill Spector</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <p>&copy; 2026 Niyogi Labs. All rights reserved. WaveBench is a trademark of Niyogi Labs.</p>
+      <div class="footer-bottom">
+        <p style="font-size: 0.85rem; margin-bottom: 0;" id="copyright-text">&copy; 2026 Niyogi Labs. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
