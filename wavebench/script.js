@@ -282,23 +282,23 @@ function initSignupForm() {
     btnSpinner.classList.remove("hidden");
     statusMsg.className = "form-status-message hidden";
 
-    // Temporarily save metadata to session storage
-    const draftDetails = {
+    // Save form choices into Supabase Auth User Metadata & sessionStorage
+    const signupData = {
       role: role,
       equipment: equipment || "Unspecified",
-      primary_feature: primaryFeature,
-      timestamp: new Date().toISOString()
+      primary_feature: primaryFeature
     };
-    sessionStorage.setItem("wavebench_draft_signup", JSON.stringify(draftDetails));
+    sessionStorage.setItem("wavebench_draft_signup", JSON.stringify(signupData));
 
     try {
       if (window.WAVEBENCH_CONFIG && !window.WAVEBENCH_CONFIG.MOCK_SUBMISSION && typeof supabaseClient !== 'undefined' && supabaseClient) {
-        // Send Magic Link via Supabase Auth
+        // Send Magic Link via Supabase Auth with custom user metadata
         const redirectUrl = window.location.origin + window.location.pathname;
         const { error } = await supabaseClient.auth.signInWithOtp({
           email: email,
           options: {
-            emailRedirectTo: redirectUrl
+            emailRedirectTo: redirectUrl,
+            data: signupData
           }
         });
 
@@ -311,7 +311,7 @@ function initSignupForm() {
         form.reset();
 
       } else {
-        // Mock Mode Fallback (Simulate Magic Link flow locally)
+        // Mock Mode Fallback
         await new Promise((res) => setTimeout(res, 1200));
         statusMsg.className = "form-status-message success";
         statusMsg.innerHTML = `✉️ <strong>[Demo Mode] Magic Link Sent!</strong> Check <strong>${escapeHtml(email)}</strong> to complete verification.`;
@@ -339,39 +339,51 @@ function initMagicLinkAuthState() {
   if (typeof supabaseClient === 'undefined' || !supabaseClient) return;
 
   supabaseClient.auth.onAuthStateChange(async (event, session) => {
-    if (event === "SIGNED_IN" && session && session.user) {
-      console.log("User signed in via Magic Link:", session.user.email);
+    if ((event === "SIGNED_IN" || event === "INITIAL_SESSION") && session && session.user) {
+      console.log("User authenticated via Magic Link:", session.user.email);
       
       const statusMsg = document.getElementById("form-status");
+
+      // Extract user metadata stored during signInWithOtp or fallback to sessionStorage
+      const userMeta = session.user.user_metadata || {};
       const draftStr = sessionStorage.getItem("wavebench_draft_signup");
-      const draft = draftStr ? JSON.parse(draftStr) : { role: "Hardware R&D", equipment: "Unspecified", primary_feature: "Hardware Debug Hints" };
+      const draft = draftStr ? JSON.parse(draftStr) : {};
+
+      const role = userMeta.role || draft.role || "Hardware R&D";
+      const equipment = userMeta.equipment || draft.equipment || "Unspecified";
+      const primaryFeature = userMeta.primary_feature || draft.primary_feature || "Hardware Debug Hints";
 
       const finalRecord = {
         email: session.user.email,
         user_id: session.user.id,
-        role: draft.role,
-        equipment: draft.equipment,
-        primary_feature: draft.primary_feature
+        role: role,
+        equipment: equipment,
+        primary_feature: primaryFeature
       };
 
       try {
-        // Upsert record with email as PRIMARY KEY into Supabase
-        const { error } = await supabaseClient
+        // Upsert record into wavebench_signups
+        const { data, error } = await supabaseClient
           .from("wavebench_signups")
-          .upsert([finalRecord]);
+          .upsert([finalRecord], { onConflict: "email" });
 
         if (error) {
-          console.warn("Notice during record insertion:", error.message);
+          console.error("Supabase Database Insert Error:", error);
+          if (statusMsg) {
+            statusMsg.className = "form-status-message error";
+            statusMsg.innerHTML = `⚠️ <strong>Database Policy Error:</strong> ${escapeHtml(error.message)}. Please check your RLS policies in Supabase SQL Editor.`;
+            statusMsg.classList.remove("hidden");
+          }
+          return;
         }
 
+        console.log("Database signup record upserted successfully:", data);
         sessionStorage.removeItem("wavebench_draft_signup");
 
         if (statusMsg) {
           statusMsg.className = "form-status-message success";
-          statusMsg.innerHTML = `🎉 <strong>Email Verified!</strong> Welcome ${escapeHtml(session.user.email)}. Your waitlist registration is confirmed!`;
+          statusMsg.innerHTML = `🎉 <strong>Email Verified!</strong> Welcome ${escapeHtml(session.user.email)}. Your waitlist registration is confirmed in our database!`;
           statusMsg.classList.remove("hidden");
-
-          // Smooth scroll to confirmation message
           statusMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       } catch (err) {
