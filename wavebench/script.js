@@ -1,12 +1,12 @@
 /**
  * WaveBench Interactive Landing Page Script
- * Niyogi Labs — Waveform Analysis, Hardware Debug Hints & Magic Link Auth
+ * Niyogi Labs — Waveform Analysis, Hardware Debug Hints & 1-Click OAuth Auth
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   initWaveformSimulator();
-  initSignupForm();
-  initMagicLinkAuthState();
+  initOAuthButtons();
+  initOAuthAuthState();
 });
 
 // -------------------------------------------------------------
@@ -123,7 +123,6 @@ function initWaveformSimulator() {
     runAnalysisSimulation(currentScenarioKey);
   });
 
-  // Initial render
   renderCanvasWaveform(currentScenarioKey);
   updateScenarioMeta(currentScenarioKey);
 }
@@ -142,11 +141,9 @@ function renderCanvasWaveform(key) {
   const width = canvas.width;
   const height = canvas.height;
 
-  // Clear background
   ctx.fillStyle = "#0f172a";
   ctx.fillRect(0, 0, width, height);
 
-  // Draw Grid Lines
   ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
   ctx.lineWidth = 1;
 
@@ -157,7 +154,6 @@ function renderCanvasWaveform(key) {
     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
   }
 
-  // Draw Center Axes
   ctx.strokeStyle = "rgba(14, 165, 233, 0.3)";
   ctx.beginPath();
   ctx.moveTo(0, height / 2); ctx.lineTo(width, height / 2);
@@ -258,93 +254,80 @@ function runAnalysisSimulation(key) {
 }
 
 // -------------------------------------------------------------
-// 2. Magic Link Email Authentication & Form Registration
+// 2. 1-Click OAuth Provider Integration (GitHub / Google)
 // -------------------------------------------------------------
-function initSignupForm() {
-  const form = document.getElementById("pre-release-form");
-  if (!form) return;
+function initOAuthButtons() {
+  const githubBtn = document.getElementById("github-oauth-btn");
+  const googleBtn = document.getElementById("google-oauth-btn");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  if (githubBtn) {
+    githubBtn.addEventListener("click", () => handleOAuthSignIn("github"));
+  }
+  if (googleBtn) {
+    googleBtn.addEventListener("click", () => handleOAuthSignIn("google"));
+  }
+}
 
-    const email = document.getElementById("user-email").value.trim();
-    const role = document.getElementById("user-role").value;
-    const equipment = document.getElementById("user-equipment").value.trim();
-    const primaryFeature = form.querySelector('input[name="primary_feature"]:checked')?.value || "Hardware Debug Hints";
+async function handleOAuthSignIn(providerName) {
+  const statusMsg = document.getElementById("form-status");
 
-    const submitBtn = document.getElementById("submit-btn");
-    const btnText = document.getElementById("btn-text");
-    const btnSpinner = document.getElementById("btn-spinner");
-    const statusMsg = document.getElementById("form-status");
+  // Read selected options from form
+  const roleEl = document.getElementById("user-role");
+  const equipmentEl = document.getElementById("user-equipment");
+  const primaryFeatureEl = document.querySelector('input[name="primary_feature"]:checked');
 
-    submitBtn.disabled = true;
-    btnText.textContent = "Sending Magic Link...";
-    btnSpinner.classList.remove("hidden");
-    statusMsg.className = "form-status-message hidden";
+  const signupData = {
+    role: roleEl ? roleEl.value : "Hardware R&D",
+    equipment: equipmentEl && equipmentEl.value.trim() ? equipmentEl.value.trim() : "Unspecified",
+    primary_feature: primaryFeatureEl ? primaryFeatureEl.value : "Hardware Debug Hints",
+    timestamp: new Date().toISOString()
+  };
 
-    // Save form choices into Supabase Auth User Metadata & sessionStorage
-    const signupData = {
-      role: role,
-      equipment: equipment || "Unspecified",
-      primary_feature: primaryFeature
-    };
-    sessionStorage.setItem("wavebench_draft_signup", JSON.stringify(signupData));
+  sessionStorage.setItem("wavebench_draft_signup", JSON.stringify(signupData));
 
-    try {
-      if (window.WAVEBENCH_CONFIG && !window.WAVEBENCH_CONFIG.MOCK_SUBMISSION && typeof supabaseClient !== 'undefined' && supabaseClient) {
-        // Send Magic Link via Supabase Auth with custom user metadata
-        const redirectUrl = window.location.origin + window.location.pathname;
-        const { error } = await supabaseClient.auth.signInWithOtp({
-          email: email,
-          options: {
-            emailRedirectTo: redirectUrl,
-            data: signupData
-          }
-        });
+  try {
+    if (window.WAVEBENCH_CONFIG && !window.WAVEBENCH_CONFIG.MOCK_SUBMISSION && typeof supabaseClient !== 'undefined' && supabaseClient) {
+      const redirectUrl = window.location.origin + window.location.pathname;
+      const { error } = await supabaseClient.auth.signInWithOAuth({
+        provider: providerName,
+        options: {
+          redirectTo: redirectUrl,
+          data: signupData
+        }
+      });
 
-        if (error) throw error;
-
-        // UI Magic Link Sent Confirmation
+      if (error) throw error;
+    } else {
+      // Mock Demo OAuth Fallback
+      await new Promise((res) => setTimeout(res, 800));
+      if (statusMsg) {
         statusMsg.className = "form-status-message success";
-        statusMsg.innerHTML = `✉️ <strong>Magic Link Sent!</strong> We emailed a 1-click confirmation link to <strong>${escapeHtml(email)}</strong>. Please check your inbox and click the link to confirm your waitlist spot.`;
+        statusMsg.innerHTML = `🌐 <strong>[Demo Mode]</strong> Redirecting to ${providerName.toUpperCase()} OAuth...`;
         statusMsg.classList.remove("hidden");
-        form.reset();
-
-      } else {
-        // Mock Mode Fallback
-        await new Promise((res) => setTimeout(res, 1200));
-        statusMsg.className = "form-status-message success";
-        statusMsg.innerHTML = `✉️ <strong>[Demo Mode] Magic Link Sent!</strong> Check <strong>${escapeHtml(email)}</strong> to complete verification.`;
-        statusMsg.classList.remove("hidden");
-        form.reset();
       }
-
-    } catch (err) {
-      console.error("Magic link error:", err);
-      statusMsg.className = "form-status-message error";
-      statusMsg.textContent = `Unable to send magic link: ${err.message || "Please check your email address."}`;
-      statusMsg.classList.remove("hidden");
-    } finally {
-      submitBtn.disabled = false;
-      btnText.textContent = "Send Magic Link";
-      btnSpinner.classList.add("hidden");
     }
-  });
+  } catch (err) {
+    console.error(`OAuth error (${providerName}):`, err);
+    if (statusMsg) {
+      statusMsg.className = "form-status-message error";
+      statusMsg.textContent = `OAuth authentication failed: ${err.message || "Please check provider setup in Supabase Dashboard."}`;
+      statusMsg.classList.remove("hidden");
+    }
+  }
 }
 
 // -------------------------------------------------------------
-// 3. Handle Magic Link Callback on Return (Auth State Listener)
+// 3. Handle OAuth Callback on Return (Auth State Listener)
 // -------------------------------------------------------------
-function initMagicLinkAuthState() {
+function initOAuthAuthState() {
   if (typeof supabaseClient === 'undefined' || !supabaseClient) return;
 
   supabaseClient.auth.onAuthStateChange(async (event, session) => {
     if ((event === "SIGNED_IN" || event === "INITIAL_SESSION") && session && session.user) {
-      console.log("User authenticated via Magic Link:", session.user.email);
+      console.log("User authenticated via OAuth:", session.user.email);
       
       const statusMsg = document.getElementById("form-status");
 
-      // Extract user metadata stored during signInWithOtp or fallback to sessionStorage
       const userMeta = session.user.user_metadata || {};
       const draftStr = sessionStorage.getItem("wavebench_draft_signup");
       const draft = draftStr ? JSON.parse(draftStr) : {};
@@ -362,7 +345,6 @@ function initMagicLinkAuthState() {
       };
 
       try {
-        // Upsert record into wavebench_signups
         const { data, error } = await supabaseClient
           .from("wavebench_signups")
           .upsert([finalRecord], { onConflict: "email" });
@@ -382,7 +364,7 @@ function initMagicLinkAuthState() {
 
         if (statusMsg) {
           statusMsg.className = "form-status-message success";
-          statusMsg.innerHTML = `🎉 <strong>Email Verified!</strong> Welcome ${escapeHtml(session.user.email)}. Your waitlist registration is confirmed in our database!`;
+          statusMsg.innerHTML = `🎉 <strong>OAuth Verified!</strong> Welcome ${escapeHtml(session.user.email)}. Your waitlist registration is confirmed in our database!`;
           statusMsg.classList.remove("hidden");
           statusMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
