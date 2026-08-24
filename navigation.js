@@ -1,3 +1,14 @@
+// Canonical URL Redirect Enforcement for GitHub Pages / Static Hosting
+(function enforceCanonicalUrl() {
+  if (typeof window === 'undefined' || !window.location) return;
+  const path = window.location.pathname;
+  if (path.endsWith('/index.html') || path === '/index.html') {
+    const cleanPath = path.slice(0, -10);
+    const newUrl = (cleanPath === '' ? '/' : cleanPath) + window.location.search + window.location.hash;
+    window.location.replace(newUrl);
+  }
+})();
+
 // Synchronously initialize theme from localStorage or default to 'light'
 (function() {
   let savedTheme = 'light';

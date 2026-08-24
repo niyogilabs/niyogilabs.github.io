@@ -17,15 +17,15 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://niyogilabs.com/dutyremind/support.html</loc>
+    <loc>https://niyogilabs.com/dutyremind/support/</loc>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://niyogilabs.com/dutyremind/privacy.html</loc>
+    <loc>https://niyogilabs.com/dutyremind/privacy/</loc>
     <priority>0.40</priority>
   </url>
   <url>
-    <loc>https://niyogilabs.com/dutyremind/terms.html</loc>
+    <loc>https://niyogilabs.com/dutyremind/terms/</loc>
     <priority>0.40</priority>
   </url>
 </urlset>
