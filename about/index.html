@@ -40,18 +40,31 @@ extra_head: |
 ---
 
   <!-- Hero Section -->
-  <section class="container hero" id="about-hero" style="padding-bottom: 24px;">
+  <section class="container hero" id="about-hero" style="padding-bottom: 20px;">
     <span class="badge" id="about-badge">About Niyogi Labs</span>
-    <p class="tagline" id="about-tagline" style="max-width: 800px; margin: 16px auto 0 auto; font-size: 1.2rem; color: var(--text-sub);">
-      Niyogi Labs is an early-stage technology startup focused on pioneering robotics, hardware automation, local-first IoT platforms, and hardware perception layers for AI agents.
-    </p>
   </section>
 
   <!-- Story & Philosophy Grid -->
   <section class="section" id="about-content" style="padding-top: 10px;">
     <div class="container" style="display: flex; flex-direction: column; gap: 40px;">
       
-      <!-- Card 1: Etymology & Philosophy -->
+      <!-- Card 1: Company Overview -->
+      <div class="glass-card" id="card-overview" style="padding: 40px;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+          <div class="card-icon" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-indigo); width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 4px;" id="overview-title">Company Overview</h2>
+            <span style="font-size: 0.9rem; color: var(--accent-indigo); font-weight: 600;">Robotics &amp; Automation Startup</span>
+          </div>
+        </div>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 0;">
+          Niyogi Labs is an early-stage technology startup focused on pioneering robotics, hardware automation, local-first IoT platforms, and hardware perception layers for AI agents.
+        </p>
+      </div>
+      
+      <!-- Card 2: Etymology & Philosophy -->
       <div class="glass-card" id="card-etymology" style="padding: 40px;">
         <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
           <div class="card-icon" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-indigo); width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
@@ -63,14 +76,14 @@ extra_head: |
           </div>
         </div>
         <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 16px;">
-          In various Indian languages—including Hindi, Sanskrit &amp; Marathi (नियोगी), Bengali / Bangla (নিয়োগী), Gujarati (નિયોગી), Telugu (నియోగి), Kannada (ನಿಯೋಗಿ), and Malayalam (നിയോഗി)—the word <strong>'Niyogi'</strong> translates directly to <strong>"Delegate"</strong> or <em>"One who is assigned a task or duty."</em>
+          In various Indian languages—including Hindi, Sanskrit &amp; Marathi (नियोगी), Bengali / Bangla (নিয়োগী), Gujarati (નિયોગી), Telugu (నియోగి), Kannada (ನಿಯೋಗಿ), and Malayalam (നിയෝගി)—the word <strong>'Niyogi'</strong> translates directly to <strong>"Delegate"</strong> or <em>"One who is assigned a task or duty."</em>
         </p>
         <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 0;">
           This concept embodies our founding vision. At Niyogi Labs, we build autonomous hardware systems, intelligent perception layers, and fail-safe automation tools designed to take over complex, repetitive, and critical tasks—allowing human engineers and teams to delegate with 100% confidence.
         </p>
       </div>
 
-      <!-- Card 2: Leadership & Chief Engineer Profile -->
+      <!-- Card 3: Leadership & Chief Engineer Profile -->
       <div class="glass-card" id="card-leadership" style="padding: 40px;">
         <div style="display: flex; flex-direction: column; gap: 24px;">
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;">
@@ -122,13 +135,7 @@ extra_head: |
         </div>
       </div>
 
-      <!-- Card 3: Ownership & Governance Disclosure -->
-      <div class="glass-card" id="card-governance" style="padding: 32px 40px; border-left: 4px solid var(--accent-indigo);">
-        <h3 style="font-size: 1.25rem; margin-bottom: 8px;" id="governance-title">Company Status &amp; Ownership Disclosure</h3>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-sub); margin-bottom: 0;">
-          Niyogi Labs is an early-stage technology startup operating in stealth R&amp;D mode. Our corporate ownership and equity structures are currently undisclosed as we dedicate 100% of our focus to product development, hardware prototyping, and core engineering execution.
-        </p>
-      </div>
+
 
     </div>
   </section>
