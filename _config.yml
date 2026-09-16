@@ -1,0 +1,12 @@
+title: Niyogi Labs
+email: niyogi.labs@gmail.com
+description: "Simplifying life through automation."
+url: "https://niyogilabs.com"
+permalink: pretty
+
+# Exclude test directories and git files from Jekyll build output
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

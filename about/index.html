@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Niyogi Labs</title>
-  <meta name="description" content="Learn about Niyogi Labs, an early-stage robotics & automation startup. Etymology of Niyogi ('Delegate'), ownership structure, and Chief Engineer leadership profile of Prof. Jacob Mathew.">
+---
+layout: default
+title: About Us | Niyogi Labs
+description: Learn about Niyogi Labs, an early-stage robotics & automation startup. Etymology of Niyogi ('Delegate'), ownership structure, and Chief Engineer leadership profile of Prof. Jacob Mathew.
+canonical_url: https://niyogilabs.com/about/
+active_nav: about
+extra_head: |
   <meta name="keywords" content="Niyogi Labs, Robotics Startup, Hardware Automation, Niyogi Meaning, Delegate, Prof. Jacob Mathew, Chief Engineer, Electronics Engineering, Computer Engineering">
-  <link rel="canonical" href="https://niyogilabs.com/about/">
-  <meta name="referrer" content="no-referrer-when-downgrade">
-  
-  <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://niyogilabs.com/about/">
   <meta property="og:title" content="About Niyogi Labs | Robotics &amp; Automation Startup">
   <meta property="og:description" content="Niyogi Labs is an early-stage startup focused on robotics and hardware automation. Led by Chief Engineer Prof. Jacob Mathew.">
   <meta property="og:image" content="https://niyogilabs.com/imgs/niyogi_labs_art.png">
 
-  <!-- Favicon & Styling -->
-  <link rel="stylesheet" href="../style.css">
-  <link rel="icon" type="image/png" href="../favicon.png">
-  <script src="../navigation.js"></script>
-
-  <!-- Structured Data / JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,56 +37,14 @@
     }
   }
   </script>
-</head>
-<body>
-
-  <!-- Navigation Header -->
-  <header>
-    <div class="container nav-container">
-      <a href="../" class="logo-link" id="nav-logo" style="display: flex; align-items: center; gap: 8px;">
-        <img src="../imgs/niyogi_labs_art.png" alt="Niyogi Labs Logo" style="width: 24px; height: 24px; object-fit: contain;">
-        Niyogi Labs
-      </a>
-      <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-nav-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-menu" id="nav-menu-list">
-        <li><a href="../" class="nav-link" id="nav-link-home">Home</a></li>
-        <li><a href="../butler/" class="nav-link" id="nav-link-butler">Butler Platform</a></li>
-        <li><a href="../dutyremind/" class="nav-link" id="nav-link-dutyremind">DutyRemind</a></li>
-        <li><a href="../wavebench/" class="nav-link" id="nav-link-wavebench">WaveBench</a></li>
-        <li><a href="../about/" class="nav-link active" id="nav-link-about">About</a></li>
-        <li class="dropdown" id="nav-dropdown-tools">
-          <a href="#" class="nav-link dropdown-toggle" id="nav-link-tools">
-            Tools
-            <svg class="dropdown-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M1 1l4 4 4-4" />
-            </svg>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="https://skillspector.niyogilabs.com/" class="dropdown-item" id="nav-link-skillspector" target="_blank" rel="noopener">Skill Spector</a></li>
-          </ul>
-        </li>
-        <li style="display: flex; align-items: center;">
-          <button class="theme-toggle" aria-label="Toggle light/dark theme" id="theme-toggle-btn" style="background: none; border: none; cursor: pointer; color: var(--text-main); display: flex; align-items: center; justify-content: center; padding: 4px; transition: var(--transition-smooth);">
-            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </header>
+---
 
   <!-- Hero Section -->
   <section class="container hero" id="about-hero" style="padding-bottom: 24px;">
-    <span class="badge" id="about-badge">Company Overview</span>
-    <div style="margin: 20px 0 16px 0;" id="about-logo-wrapper">
-      <img src="../imgs/niyogi_labs_logo.png" alt="Niyogi Labs Logo" style="max-width: 280px; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 0 14px rgba(99, 102, 241, 0.25));" id="about-logo-img">
-    </div>
-    <h1 id="about-title" class="text-gradient">Automating Complex Tasks Through Intelligent Engineering</h1>
-    <p class="tagline" id="about-tagline">Niyogi Labs is an early-stage technology startup focused on pioneering robotics, hardware automation, local-first IoT platforms, and hardware perception layers for AI agents.</p>
+    <span class="badge" id="about-badge">About Niyogi Labs</span>
+    <p class="tagline" id="about-tagline" style="max-width: 800px; margin: 16px auto 0 auto; font-size: 1.2rem; color: var(--text-sub);">
+      Niyogi Labs is an early-stage technology startup focused on pioneering robotics, hardware automation, local-first IoT platforms, and hardware perception layers for AI agents.
+    </p>
   </section>
 
   <!-- Story & Philosophy Grid -->
@@ -115,7 +63,7 @@
           </div>
         </div>
         <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 16px;">
-          In various Indian languages, the word <strong>'Niyogi' (नियोगी / नियोगी)</strong> translates directly to <strong>"Delegate"</strong> or <em>"One who is assigned a task or duty."</em>
+          In various Indian languages—including Hindi, Sanskrit &amp; Marathi (नियोगी), Bengali / Bangla (নিয়োগী), Gujarati (નિયોગી), Telugu (నియోగి), Kannada (ನಿಯೋಗಿ), and Malayalam (നിയോഗി)—the word <strong>'Niyogi'</strong> translates directly to <strong>"Delegate"</strong> or <em>"One who is assigned a task or duty."</em>
         </p>
         <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 0;">
           This concept embodies our founding vision. At Niyogi Labs, we build autonomous hardware systems, intelligent perception layers, and fail-safe automation tools designed to take over complex, repetitive, and critical tasks—allowing human engineers and teams to delegate with 100% confidence.
@@ -196,42 +144,4 @@
     </div>
   </section>
 
-  <!-- Global Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-            <img src="../imgs/niyogi_labs_art.png" alt="Niyogi Labs Logo" style="width: 32px; height: 32px; object-fit: contain;">
-            <h3 id="footer-logo" style="margin-bottom: 0;">Niyogi Labs</h3>
-          </div>
-          <p style="font-size: 0.9rem; margin-bottom: 0;">Simplifying life through automation.</p>
-        </div>
-        <div>
-          <h4 class="footer-links-title">Platforms</h4>
-          <ul class="footer-links-list">
-            <li><a href="../butler/" id="footer-link-butler-about">Butler</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-links-title">Products</h4>
-          <ul class="footer-links-list">
-            <li><a href="../dutyremind/" id="footer-link-dutyremind-about">DutyRemind</a></li>
-            <li><a href="../wavebench/" id="footer-link-wavebench-about">WaveBench</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-links-title">Tools</h4>
-          <ul class="footer-links-list">
-            <li><a href="https://skillspector.niyogilabs.com/" target="_blank" rel="noopener" id="footer-link-skillspector">Skill Spector</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p style="font-size: 0.85rem; margin-bottom: 0;" id="copyright-text">&copy; 2026 Niyogi Labs. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
 
-</body>
-</html>

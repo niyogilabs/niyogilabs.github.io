@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+  {% endif %}
+  {% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords }}">
+  {% endif %}
+  {% if page.canonical_url %}
+  <link rel="canonical" href="{{ page.canonical_url }}">
+  {% endif %}
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+  <script src="{{ '/navigation.js' | relative_url }}"></script>
+
+  {% if page.extra_head %}
+    {{ page.extra_head }}
+  {% endif %}
+</head>
+<body>
+
+  {% include header.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+
+  {% if page.extra_scripts %}
+    {{ page.extra_scripts }}
+  {% endif %}
+
+</body>
+</html>

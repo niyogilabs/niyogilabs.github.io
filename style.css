@@ -125,6 +125,7 @@ body {
 }
 
 .text-gradient {
+  background-image: var(--gradient-indigo-purple);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
