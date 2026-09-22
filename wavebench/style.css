@@ -617,28 +617,100 @@ body {
   line-height: 1.55;
 }
 
-/* Validation Form Section */
+/* Validation Form Section (2-Step Sequential Workflow) */
 .signup-card-wrapper {
   padding: 40px;
   background: #ffffff;
   border: 1px solid var(--niyogi-blue-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
 }
 
-.signup-grid {
+.signup-header h2 {
+  font-size: 1.95rem;
+  color: var(--niyogi-navy);
+  margin-bottom: 8px;
+}
+
+.signup-header p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.signup-steps-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  gap: 32px;
+  align-items: stretch;
+  margin-top: 24px;
 }
 
-.signup-info h2 { font-size: 1.85rem; color: var(--niyogi-navy); margin-bottom: 14px; }
-.signup-info p { color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem; }
+.signup-step-box {
+  padding: 28px;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
 
-.benefit-check-list { display: flex; flex-direction: column; gap: 10px; }
-.check-item { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-main); }
+.signup-step-box:hover {
+  border-color: var(--niyogi-blue-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.step-box-1 {
+  background: #f8fafc;
+}
+
+.step-box-2 {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.step-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.step-number-badge {
+  background: var(--niyogi-navy);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--niyogi-navy);
+  margin-bottom: 2px;
+}
+
+.step-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.benefit-check-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.check-item { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--text-main); }
 .check-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: #d1fae5;
   color: var(--niyogi-green);
@@ -652,7 +724,8 @@ body {
 .oauth-buttons-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+  margin-top: auto;
 }
 
 /* Form Styles */
@@ -749,6 +822,7 @@ body {
   .usps-grid { grid-template-columns: 1fr 1fr; }
   .demo-grid { grid-template-columns: 1fr; }
   .signup-grid { grid-template-columns: 1fr; }
+  .signup-steps-container { grid-template-columns: 1fr; }
   .faq-grid { grid-template-columns: 1fr; }
 }
 

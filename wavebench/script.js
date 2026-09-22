@@ -260,6 +260,13 @@ function initOAuthButtons() {
   const githubBtn = document.getElementById("github-oauth-btn");
   const googleBtn = document.getElementById("google-oauth-btn");
 
+  // Auto-save form draft on user input changes in Step 1
+  const formEl = document.getElementById("pre-release-form");
+  if (formEl) {
+    formEl.addEventListener("change", saveFormDraftToStorage);
+    formEl.addEventListener("input", saveFormDraftToStorage);
+  }
+
   if (githubBtn) {
     githubBtn.addEventListener("click", () => handleOAuthSignIn("github"));
   }
@@ -268,22 +275,27 @@ function initOAuthButtons() {
   }
 }
 
-async function handleOAuthSignIn(providerName) {
-  const statusMsg = document.getElementById("form-status");
-
-  // Read selected options from form
+function saveFormDraftToStorage() {
   const roleEl = document.getElementById("user-role");
   const equipmentEl = document.getElementById("user-equipment");
   const primaryFeatureEl = document.querySelector('input[name="primary_feature"]:checked');
 
-  const signupData = {
-    role: roleEl ? roleEl.value : "Hardware R&D",
+  const draft = {
+    role: roleEl && roleEl.value ? roleEl.value : "Hardware R&D",
     equipment: equipmentEl && equipmentEl.value.trim() ? equipmentEl.value.trim() : "Unspecified",
     primary_feature: primaryFeatureEl ? primaryFeatureEl.value : "Hardware Debug Hints",
     timestamp: new Date().toISOString()
   };
 
-  sessionStorage.setItem("wavebench_draft_signup", JSON.stringify(signupData));
+  sessionStorage.setItem("wavebench_draft_signup", JSON.stringify(draft));
+  return draft;
+}
+
+async function handleOAuthSignIn(providerName) {
+  const statusMsg = document.getElementById("form-status");
+
+  // Ensure current Step 1 values are captured
+  const signupData = saveFormDraftToStorage();
 
   try {
     if (window.WAVEBENCH_CONFIG && !window.WAVEBENCH_CONFIG.MOCK_SUBMISSION && typeof supabaseClient !== 'undefined' && supabaseClient) {
@@ -302,7 +314,7 @@ async function handleOAuthSignIn(providerName) {
       await new Promise((res) => setTimeout(res, 800));
       if (statusMsg) {
         statusMsg.className = "form-status-message success";
-        statusMsg.innerHTML = `🌐 <strong>[Demo Mode]</strong> Redirecting to ${providerName.toUpperCase()} OAuth...`;
+        statusMsg.innerHTML = `🌐 <strong>[Demo Mode]</strong> Redirecting to ${providerName.toUpperCase()} OAuth with preferences: <em>${escapeHtml(signupData.role)}</em>...`;
         statusMsg.classList.remove("hidden");
       }
     }
