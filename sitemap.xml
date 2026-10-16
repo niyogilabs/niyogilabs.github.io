@@ -21,6 +21,18 @@
     <priority>0.70</priority>
   </url>
   <url>
+    <loc>https://niyogilabs.com/dutyremind/use-cases/teams/</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://niyogilabs.com/dutyremind/use-cases/small-business/</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://niyogilabs.com/dutyremind/use-cases/individuals/</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://niyogilabs.com/dutyremind/support/</loc>
     <priority>0.60</priority>
   </url>

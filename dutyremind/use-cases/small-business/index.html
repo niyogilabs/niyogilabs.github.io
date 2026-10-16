@@ -1,0 +1,344 @@
+---
+layout: default
+title: "How DutyRemind Can Help Small Businesses & Clinics Manage Client Appointments | Niyogi Labs"
+description: "Learn how specialty clinics, wellness practices, and small businesses use DutyRemind to turn Google Sheets into a powerful client appointment booking and calendar reminder system with descriptive event titles."
+canonical_url: https://niyogilabs.com/dutyremind/use-cases/small-business/
+active_nav: dutyremind
+extra_head: |
+  <meta name="keywords" content="small business appointment scheduling, clinic scheduling google sheets, client reminder software, salon appointment tracker, dutyremind small business, google sheets calendar sync">
+  <meta property="og:title" content="How DutyRemind Can Help Small Businesses &amp; Clinics Manage Client Appointments">
+  <meta property="og:description" content="Discover how small clinics and appointment-based businesses eliminate expensive booking SaaS fees by scheduling directly from Google Sheets with custom event titles.">
+  <meta property="og:url" content="https://niyogilabs.com/dutyremind/use-cases/small-business/">
+  <meta name="twitter:title" content="How DutyRemind Can Help Small Businesses &amp; Clinics Manage Client Appointments">
+  <meta name="twitter:description" content="Turn your Google Sheet into an automated appointment calendar system for practitioners and clients with zero third-party software overhead.">
+---
+
+  <!-- Hero Section -->
+  <section class="container hero" id="business-guide-hero" style="padding-bottom: 24px;">
+    <div style="margin-bottom: 16px;">
+      <a href="{{ '/dutyremind/' | relative_url }}" style="color: var(--accent-cyan); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+        &larr; Back to DutyRemind Overview
+      </a>
+    </div>
+    <span class="badge" id="business-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); border-color: rgba(6, 182, 212, 0.3);">
+      Practical Guide &bull; Clinics &amp; Small Businesses
+    </span>
+    <h1 id="business-title" class="text-gradient text-cyan-blue" style="max-width: 900px; margin: 0 auto 16px auto;">
+      How DutyRemind Can Help Small Businesses &amp; Clinics Manage Client Appointments
+    </h1>
+    <p class="tagline" id="business-desc" style="max-width: 780px; margin: 0 auto 32px auto;">
+      A practical guide to managing client appointments with a lightweight, flexible Google Sheets workflow. Assign appointment types directly in spreadsheet cells, sync them to Google Calendar as descriptive event titles, and deliver automatic phone reminders to staff and clients.
+    </p>
+
+    <!-- Potential Savings Highlight Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto 36px auto;" id="savings-grid">
+      <div class="glass-card" style="padding: 20px; text-align: center; border-radius: 12px; border-color: rgba(6, 182, 212, 0.2);">
+        <div style="font-size: 2.2rem; font-weight: 800; color: #10b981; line-height: 1.2;">$1,200+</div>
+        <p style="font-size: 0.85rem; color: var(--text-sub); margin: 6px 0 0 0;">Avg. Annual Software Overhead Saved</p>
+      </div>
+      <div class="glass-card" style="padding: 20px; text-align: center; border-radius: 12px; border-color: rgba(6, 182, 212, 0.2);">
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-cyan); line-height: 1.2;">60% &darr;</div>
+        <p style="font-size: 0.85rem; color: var(--text-sub); margin: 6px 0 0 0;">Fewer Client No-Shows &amp; Delays</p>
+      </div>
+      <div class="glass-card" style="padding: 20px; text-align: center; border-radius: 12px; border-color: rgba(6, 182, 212, 0.2);">
+        <div style="font-size: 2.2rem; font-weight: 800; color: #a855f7; line-height: 1.2;">8+ Hrs</div>
+        <p style="font-size: 0.85rem; color: var(--text-sub); margin: 6px 0 0 0;">Saved Weekly on Manual Reminders</p>
+      </div>
+      <div class="glass-card" style="padding: 20px; text-align: center; border-radius: 12px; border-color: rgba(6, 182, 212, 0.2);">
+        <div style="font-size: 2.2rem; font-weight: 800; color: #f59e0b; line-height: 1.2;">0 Apps</div>
+        <p style="font-size: 0.85rem; color: var(--text-sub); margin: 6px 0 0 0;">Clients Require No App Downloads</p>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="https://workspace.google.com/marketplace/app/dutyremind/712259088045" target="_blank" rel="noopener" class="btn btn-primary" id="cta-install-biz" style="box-shadow: 0 4px 14px rgba(6, 182, 212, 0.4); background: var(--gradient-cyan-blue);">
+        Install Free on Google Workspace
+      </a>
+      <a href="{{ '/dutyremind/support/' | relative_url }}" class="btn btn-secondary" id="cta-guide-biz">
+        View Setup Guide
+      </a>
+    </div>
+  </section>
+
+  <!-- Story & How-To Content -->
+  <section class="section" style="padding-top: 20px;" id="business-content">
+    <div class="container" style="max-width: 920px; display: flex; flex-direction: column; gap: 48px;">
+
+      <!-- Step 1: The Small Business Dilemma -->
+      <div class="glass-card" id="card-dilemma" style="padding: 36px 32px;">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+          <div class="card-icon" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <div>
+            <span style="font-size: 0.85rem; color: #ef4444; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Step 1 &bull; The Challenge</span>
+            <h2 style="font-size: 1.5rem; margin-top: 2px; margin-bottom: 0;">Balancing Administrative Overhead &amp; Reliability in Small Practices</h2>
+          </div>
+        </div>
+
+        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 16px;">
+          Consider a typical boutique wellness clinic, dental office, or physiotherapy studio with 3–8 practitioners. Every day, the front desk must balance practitioner rooms, specific procedure lengths, client booking requests, and last-minute schedule changes.
+        </p>
+
+        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 20px;">
+          Most clinic owners find themselves balancing two common approaches:
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 20px;">
+            <strong style="color: var(--accent-cyan); font-size: 0.95rem; display: block; margin-bottom: 6px;">Complex All-in-One Booking Suites</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
+              Full-featured clinic booking platforms offer extensive features, but often carry higher monthly tier fees ($60–$200/mo) and steeper learning curves. For boutique practices that simply need dependable calendar coordination, separate dashboards and client portal logins can introduce extra friction.
+            </p>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 20px;">
+            <strong style="color: #f59e0b; font-size: 0.95rem; display: block; margin-bottom: 6px;">Manual Spreadsheets Without Sync</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
+              A basic spreadsheet is intuitive and familiar, but practitioners must manually copy bookings into their personal calendars. Without automated calendar alerts, clients and staff can lose track of dates, resulting in preventable delays and missed appointments.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: The Setup with Descriptive Names -->
+      <div class="glass-card" id="card-setup" style="padding: 36px 32px;">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+          <div class="card-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div>
+            <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Step 2 &bull; The Setup</span>
+            <h2 style="font-size: 1.5rem; margin-top: 2px; margin-bottom: 0;">Spreadsheet Blueprint: Using Descriptive Event Titles</h2>
+          </div>
+        </div>
+
+        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 16px;">
+          Here is where <strong>DutyRemind</strong> shines for businesses. In standard duty rosters, people mark an <code>'X'</code> to indicate duty. But in DutyRemind, <strong>your cell content does not have to be just "X"</strong>.
+        </p>
+
+        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 20px;">
+          If you enter a descriptive label—such as <code style="color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1); padding: 2px 6px; border-radius: 4px;">Initial Consultation: Jane D.</code> or <code style="color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1); padding: 2px 6px; border-radius: 4px;">Deep Cleaning &amp; Polish</code>—DutyRemind automatically uses that exact text as the <strong>Google Calendar Event Title</strong>!
+        </p>
+
+        <!-- Mock Spreadsheet Display Table -->
+        <div style="overflow-x: auto; background: var(--bg-dark); border-radius: 10px; border: 1px solid var(--border-subtle); padding: 12px; margin-bottom: 20px;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; font-family: monospace; text-align: left; min-width: 660px;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-muted);">
+                <th style="padding: 10px; width: 50px;">Row</th>
+                <th style="padding: 10px; width: 200px;">Col 1 (Email)</th>
+                <th style="padding: 10px; width: 140px;">Col 2 (Practitioner)</th>
+                <th style="padding: 10px; color: var(--accent-cyan);">Col 3 (2026-10-22 &bull; Slot: M1)</th>
+                <th style="padding: 10px; color: var(--accent-cyan);">Col 4 (2026-10-22 &bull; Slot: M2)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 8px 10px; color: var(--text-muted);">2</td>
+                <td style="padding: 8px 10px; color: var(--text-muted);">Dates</td>
+                <td style="padding: 8px 10px; color: var(--text-muted);">&mdash;</td>
+                <td style="padding: 8px 10px; font-weight: 700; color: var(--text-main);">2026-10-22</td>
+                <td style="padding: 8px 10px; font-weight: 700; color: var(--text-main);">2026-10-22</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(6, 182, 212, 0.04);">
+                <td style="padding: 8px 10px; color: var(--text-muted);">4</td>
+                <td style="padding: 8px 10px; color: var(--accent-cyan); font-weight: 600;">Time Slot Code</td>
+                <td style="padding: 8px 10px; color: var(--text-muted);">&mdash;</td>
+                <td style="padding: 8px 10px; color: var(--accent-cyan); font-weight: 700;">M1 (09:00 - 10:15)</td>
+                <td style="padding: 8px 10px; color: var(--accent-cyan); font-weight: 700;">M2 (10:30 - 11:45)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 8px 10px; color: var(--text-muted);">6</td>
+                <td style="padding: 8px 10px; color: var(--text-main);">dr.clara@wellness.com</td>
+                <td style="padding: 8px 10px; color: var(--text-muted);">Dr. Clara (Physio)</td>
+                <td style="padding: 8px 10px; color: #10b981; font-weight: 700; background: rgba(16, 185, 129, 0.08); border-radius: 4px;">Initial Evaluation: Mark T.</td>
+                <td style="padding: 8px 10px; color: var(--text-muted);">&mdash;</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 8px 10px; color: var(--text-muted);">7</td>
+                <td style="padding: 8px 10px; color: var(--text-main);">dr.adrian@wellness.com</td>
+                <td style="padding: 8px 10px; color: var(--text-muted);">Dr. Adrian (Dental)</td>
+                <td style="padding: 8px 10px; color: var(--text-muted);">&mdash;</td>
+                <td style="padding: 8px 10px; color: #10b981; font-weight: 700; background: rgba(16, 185, 129, 0.08); border-radius: 4px;">Deep Cleaning: Sarah K.</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 10px; color: var(--text-muted);">8</td>
+                <td style="padding: 8px 10px; color: var(--text-main);">reception@wellness.com</td>
+                <td style="padding: 8px 10px; color: var(--text-muted);">Front Desk</td>
+                <td style="padding: 8px 10px; color: #10b981; font-weight: 700; background: rgba(16, 185, 129, 0.08); border-radius: 4px;">Initial Evaluation: Mark T.</td>
+                <td style="padding: 8px 10px; color: #10b981; font-weight: 700; background: rgba(16, 185, 129, 0.08); border-radius: 4px;">Deep Cleaning: Sarah K.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="background: rgba(99, 102, 241, 0.05); border-left: 3px solid var(--accent-indigo); padding: 14px 18px; border-radius: 0 8px 8px 0;">
+          <p style="font-size: 0.9rem; color: var(--text-sub); margin: 0; line-height: 1.6;">
+            <strong style="color: var(--accent-indigo);">Pro Tip:</strong> By including both the practitioner's email and the front-desk (or client's) email on rows with the same descriptive text, DutyRemind connects them to the <em>same shared calendar event</em> automatically!
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3: The Sync Workflow -->
+      <div class="glass-card" id="card-workflow" style="padding: 36px 32px;">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+          <div class="card-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+          </div>
+          <div>
+            <span style="font-size: 0.85rem; color: #10b981; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Step 3 &bull; Execution</span>
+            <h2 style="font-size: 1.5rem; margin-top: 2px; margin-bottom: 0;">The 1-Click Sync: Turning Cells into Calendar Events</h2>
+          </div>
+        </div>
+
+        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 20px;">
+          Once the daily or weekly appointment grid is filled in your Google Sheet, the front-desk coordinator simply clicks:
+        </p>
+
+        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 20px; text-align: center; font-size: 1.05rem; font-weight: 600; color: var(--accent-cyan); margin-bottom: 24px;">
+          Extensions &rarr; DutyRemind &rarr; Sync Calendars
+        </div>
+
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 16px;">
+          Behind the scenes, DutyRemind performs three automated actions in seconds:
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="color: #10b981; font-weight: 700; font-size: 1.1rem; line-height: 1.2;">&check;</span>
+            <p style="font-size: 0.92rem; color: var(--text-sub); margin: 0; line-height: 1.6;">
+              <strong>Creates Calendar Events with Custom Titles:</strong> An event titled <em>"Initial Evaluation: Mark T."</em> is created from 09:00 to 10:15 AM on October 22nd.
+            </p>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="color: #10b981; font-weight: 700; font-size: 1.1rem; line-height: 1.2;">&check;</span>
+            <p style="font-size: 0.92rem; color: var(--text-sub); margin: 0; line-height: 1.6;">
+              <strong>Sends Native Invites:</strong> The practitioner (and client, if desired) receives an invite directly in their Google Calendar, appearing seamlessly on iPhone, Android, or desktop.
+            </p>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="color: #10b981; font-weight: 700; font-size: 1.1rem; line-height: 1.2;">&check;</span>
+            <p style="font-size: 0.92rem; color: var(--text-sub); margin: 0; line-height: 1.6;">
+              <strong>Activates Configured Reminders:</strong> Push notifications (e.g. 60 minutes or 1 day before the appointment) trigger automatically on the attendee's smartphone without requiring SMS gateway fees.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Managing Real-World Changes -->
+      <div class="glass-card" id="card-changes" style="padding: 36px 32px;">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+          <div class="card-icon" style="background: rgba(168, 85, 247, 0.15); color: #a855f7; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+          </div>
+          <div>
+            <span style="font-size: 0.85rem; color: #a855f7; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Step 4 &bull; Everyday Operations</span>
+            <h2 style="font-size: 1.5rem; margin-top: 2px; margin-bottom: 0;">Handling Reschedules, Swaps &amp; Cancellations</h2>
+          </div>
+        </div>
+
+        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 20px;">
+          In small service businesses, schedules change constantly. DutyRemind is built to make modifications completely painless directly from the spreadsheet:
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px;">
+            <strong style="color: var(--text-main); font-size: 0.95rem; display: block; margin-bottom: 6px;">Changing Appointment Types</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
+              If a patient switches from a basic checkup to a root canal, simply edit the text in the cell. Re-running sync automatically updates the calendar event title and details.
+            </p>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px;">
+            <strong style="color: var(--text-main); font-size: 0.95rem; display: block; margin-bottom: 6px;">Reassigning Practitioners</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
+              If Dr. Clara is sick, cut the cell content and paste it into Dr. Adrian's row. Sync seamlessly uninvites Dr. Clara and adds Dr. Adrian with no calendar conflicts.
+            </p>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px;">
+            <strong style="color: var(--text-main); font-size: 0.95rem; display: block; margin-bottom: 6px;">Cancellations &amp; No-Shows</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
+              Clearing a cell automatically deletes the corresponding calendar event on the next sync, freeing up the slot cleanly without manual calendar hunting.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: ROI & Potential Savings Breakdown -->
+      <div class="glass-card" id="card-savings-breakdown" style="padding: 36px 32px; border-color: rgba(16, 185, 129, 0.3);">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+          <div class="card-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <div>
+            <span style="font-size: 0.85rem; color: #10b981; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Step 5 &bull; Financial Impact</span>
+            <h2 style="font-size: 1.5rem; margin-top: 2px; margin-bottom: 0;">ROI &amp; Potential Savings Breakdown</h2>
+          </div>
+        </div>
+
+        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 24px;">
+          How much can a typical 4–6 person clinic or boutique studio save by switching to a Google Sheets + DutyRemind setup? Here is the realistic annual comparison:
+        </p>
+
+        <!-- ROI Comparison Table -->
+        <div style="overflow-x: auto; background: var(--bg-dark); border-radius: 10px; border: 1px solid var(--border-subtle); padding: 12px; margin-bottom: 24px;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; min-width: 580px;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-muted);">
+                <th style="padding: 10px;">Cost Category</th>
+                <th style="padding: 10px; color: #ef4444;">All-in-One Booking Suite</th>
+                <th style="padding: 10px; color: #10b981;">DutyRemind Workflow</th>
+                <th style="padding: 10px; color: var(--accent-cyan);">Your Annual Savings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 10px; font-weight: 600;">Platform Subscriptions</td>
+                <td style="padding: 10px; color: #ef4444;">$70 &ndash; $150 / mo ($840 &ndash; $1,800/yr)</td>
+                <td style="padding: 10px; color: #10b981;">$0 (Free tier) or $89/yr (DutyRemind Pro)</td>
+                <td style="padding: 10px; color: var(--accent-cyan); font-weight: 700;">$750 &ndash; $1,710 / yr</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 10px; font-weight: 600;">SMS Reminder Add-ons</td>
+                <td style="padding: 10px; color: #ef4444;">$30 &ndash; $50 / mo ($360 &ndash; $600/yr)</td>
+                <td style="padding: 10px; color: #10b981;">$0 (Native push alerts &amp; calendar popups)</td>
+                <td style="padding: 10px; color: var(--accent-cyan); font-weight: 700;">$360 &ndash; $600 / yr</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 10px; font-weight: 600;">Front-Desk Labor Hours</td>
+                <td style="padding: 10px; color: #ef4444;">~8 hrs/wk manually copying schedules</td>
+                <td style="padding: 10px; color: #10b981;">~15 mins/wk with 1-click sync</td>
+                <td style="padding: 10px; color: var(--accent-cyan); font-weight: 700;">350+ Hours Saved / yr</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; font-weight: 600;">Reduced No-Show Losses</td>
+                <td style="padding: 10px; color: #ef4444;">10&ndash;15% forgotten appointments</td>
+                <td style="padding: 10px; color: #10b981;">Automated calendar popups on phone</td>
+                <td style="padding: 10px; color: var(--accent-cyan); font-weight: 700;">Thousands in recovered billings</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--text-sub); margin: 0; line-height: 1.6;">
+          For a boutique clinic or firm, saving <strong>$1,500 to $2,500+ annually in operational and software costs</strong> while freeing up front-desk staff to focus on in-person client care delivers an immediate, tangible return on day one.
+        </p>
+      </div>
+
+      <!-- Call to Action Banner -->
+      <div class="glass-card" style="padding: 40px 32px; text-align: center; background: radial-gradient(circle at center, rgba(6, 182, 212, 0.1) 0%, rgba(6, 8, 20, 0) 70%); border-color: rgba(6, 182, 212, 0.3);" id="business-guide-cta">
+        <h2 style="font-size: 1.8rem; margin-bottom: 10px;">Ready to Upgrade Your Clinic's Scheduling?</h2>
+        <p style="color: var(--text-sub); max-width: 620px; margin: 0 auto 28px auto; font-size: 1rem; line-height: 1.6;">
+          No complicated setup or lengthy software migrations. Install DutyRemind in seconds and sync your Google Sheet appointments directly to Google Calendar.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://workspace.google.com/marketplace/app/dutyremind/712259088045" target="_blank" rel="noopener" class="btn btn-primary" style="box-shadow: 0 4px 14px rgba(6, 182, 212, 0.4); background: var(--gradient-cyan-blue);">
+            Install DutyRemind Free
+          </a>
+          <a href="{{ '/dutyremind/support/' | relative_url }}" class="btn btn-secondary">
+            Read Setup Guide
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
