@@ -32,7 +32,7 @@ extra_head: |
       max-width: 800px;
       margin: 40px auto 0 auto;
       padding-left: 32px;
-      border-left: 2px solid rgba(99, 102, 241, 0.2);
+      border-left: 2px solid var(--border-subtle);
     }
     
     .workflow-step {
@@ -51,22 +51,22 @@ extra_head: |
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background: var(--gradient-indigo-purple);
-      color: white;
+      background: var(--accent-royal);
+      color: #ffffff;
       font-size: 0.8rem;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+      box-shadow: var(--shadow-sm);
     }
     
     .workflow-content {
       background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      border-radius: 10px;
       padding: 20px;
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-card);
     }
     
     .workflow-header {
@@ -83,9 +83,9 @@ extra_head: |
       font-size: 0.75rem;
       padding: 2px 8px;
       border-radius: 12px;
-      background: rgba(99, 102, 241, 0.1);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      color: var(--accent-indigo);
+      background: var(--feature-bg);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
     }
     
     .use-cases-grid {
@@ -109,19 +109,19 @@ extra_scripts: |
   <!-- Hero Section -->
   <section class="container hero" id="butler-hero" style="padding-bottom: 10px;">
     <div style="margin-bottom: 20px;">
-      <img src="imgs/butler_logo.png" alt="Butler Logo" style="width: 100px; height: 100px; object-fit: contain; border-radius: 20px; box-shadow: var(--shadow-glow), 0 8px 30px rgba(99, 102, 241, 0.25); border: 1px solid rgba(99, 102, 241, 0.2);">
+      <img src="imgs/butler_logo.png" alt="Butler Logo" style="width: 100px; height: 100px; object-fit: contain; border-radius: 12px; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card);">
     </div>
     <span class="badge" id="butler-badge">Fail-Safe IoT Topology</span>
-    <h1 id="butler-title" class="text-gradient text-indigo-purple">The Stateful, Local-First IoT Platform</h1>
+    <h1 id="butler-title">The Stateful, Local-First IoT Platform</h1>
     <p class="tagline" id="butler-desc">An open-core hardware automation ecosystem built to operate reliably through power losses and intermittent network drops. Simplifying human lives by automating physical activities locally.</p>
     
     <!-- Core Vision Blockquote -->
-    <div style="background: rgba(99, 102, 241, 0.04); border-left: 4px solid var(--accent-indigo); padding: 20px 24px; border-radius: 4px 16px 16px 4px; max-width: 800px; margin: 32px auto; text-align: left; box-shadow: var(--shadow-glow); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div style="background: var(--feature-bg); border-left: 4px solid var(--accent-royal); padding: 20px 24px; border-radius: 4px 8px 8px 4px; max-width: 800px; margin: 32px auto; text-align: left; box-shadow: var(--shadow-card); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
       <p style="font-size: 1.1rem; line-height: 1.6; font-style: italic; color: var(--text-main); margin-bottom: 0;">"Smart devices shouldn't become dumb when the internet drops. Butler is an enterprise-grade, local-first IoT platform designed to remain fully operational and maintain state even under total network failure."</p>
     </div>
 
     <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
-      <a href="mailto:niyogi.labs@gmail.com?subject=Butler%20Customization%20Inquiry" class="btn btn-primary" id="butler-cta-contact" style="box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4); background: var(--gradient-indigo-purple);">Request IoT Customization</a>
+      <a href="mailto:niyogi.labs@gmail.com?subject=Butler%20Customization%20Inquiry" class="btn btn-primary" id="butler-cta-contact">Request IoT Customization</a>
       <a href="https://github.com/niyogilabs/Butler" target="_blank" rel="noopener" class="btn btn-secondary" id="butler-cta-core">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:6px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
         Firmware Core
@@ -142,7 +142,7 @@ extra_scripts: |
       <div class="cards-grid">
         <!-- Butler Engine -->
         <div class="glass-card" id="card-butler-engine">
-          <h3 id="engine-title" style="color: var(--accent-indigo);">1. Embedded C/C++ Firmware</h3>
+          <h3 id="engine-title">1. Embedded C/C++ Firmware</h3>
           <p id="engine-desc">Hardware controller code built targeting ESP32 and ESP8266 microcontrollers. Resides directly on physical automation switches, relays, and motor pins.</p>
           <ul style="color: var(--text-sub); margin-left: 20px; margin-bottom: 24px; font-size: 0.92rem; line-height: 1.6;">
             <li style="margin-bottom: 6px;">C/C++ compatible with ESP-IDF v6.0 and ESP8266 RTOS SDK</li>
@@ -154,7 +154,7 @@ extra_scripts: |
 
         <!-- Butler Manager -->
         <div class="glass-card" id="card-butler-manager">
-          <h3 id="manager-title" style="color: var(--accent-purple);">2. Kotlin Android Companion</h3>
+          <h3 id="manager-title">2. Kotlin Android Companion</h3>
           <p id="manager-desc">The mobile app console designed for commissioning, configuration, local wireless handshakes, and remote telemetry dashboard sync.</p>
           <ul style="color: var(--text-sub); margin-left: 20px; margin-bottom: 24px; font-size: 0.92rem; line-height: 1.6;">
             <li style="margin-bottom: 6px;">Jetpack Compose frontend utilizing modern Kotlin architecture</li>
@@ -168,29 +168,29 @@ extra_scripts: |
   </section>
 
   <!-- Topology & Stateful Sections -->
-  <section class="section" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" id="butler-topology">
+  <section class="section" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" id="butler-topology">
     <div class="container">
       <h2 style="text-align: center; margin-bottom: 8px;">Pillar A: Fail-Safe Hierarchy</h2>
       <p style="text-align: center; max-width: 600px; margin: 0 auto 32px auto; color: var(--text-sub); font-size: 0.95rem;">Butler operates under a strict hierarchical fallback model, prioritizing local survival over cloud dependency.</p>
       
       <div class="topology-grid">
         <div class="glass-card" style="padding: 20px;">
-          <div style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.05em;">LEVEL 1</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.05em;">LEVEL 1</div>
           <h4 style="margin-bottom: 8px; color: var(--text-main);">Cloud-Tethered</h4>
           <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 0;">Optional cloud sync. Streams logs and configurations to standard cloud platforms when network is stable.</p>
         </div>
         <div class="glass-card" style="padding: 20px;">
-          <div style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.05em;">LEVEL 2</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.05em;">LEVEL 2</div>
           <h4 style="margin-bottom: 8px; color: var(--text-main);">Local Hub (MQTT)</h4>
           <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 0;">Control and metrics stream locally through a local Linux IoT Hub (<code>iothub.local</code>) via MQTT protocol.</p>
         </div>
         <div class="glass-card" style="padding: 20px;">
-          <div style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.05em;">LEVEL 3</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.05em;">LEVEL 3</div>
           <h4 style="margin-bottom: 8px; color: var(--text-main);">Standalone Offline</h4>
           <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 0;">If Wi-Fi drops, the local RTC chip maintains perfect cron clock cycles, executing board schedules offline.</p>
         </div>
         <div class="glass-card" style="padding: 20px;">
-          <div style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.05em;">LEVEL 4</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.05em;">LEVEL 4</div>
           <h4 style="margin-bottom: 8px; color: var(--text-main);">Direct Mobile AP</h4>
           <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 0;">In total isolation, a direct SoftAP/BLE connection retrieves local diagnostics and uploads configs directly.</p>
         </div>
@@ -202,8 +202,8 @@ extra_scripts: |
       <p style="text-align: center; max-width: 600px; margin: 0 auto 12px auto; color: var(--text-sub); font-size: 0.95rem;">Preventing digital twin drift. Traverses and calculates exact target state dynamically.</p>
       
       <div class="compare-container">
-        <div class="glass-card" style="border-left: 3px solid #ef4444; padding: 24px;">
-          <h4 style="color: #ef4444; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <div class="glass-card" style="border-left: 3px solid var(--border-card); padding: 24px;">
+          <h4 style="color: var(--text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
             Traditional Event-Based IoT
           </h4>
@@ -211,8 +211,8 @@ extra_scripts: |
             Listens for isolated triggers (e.g. "Relay On"). If a power cut or connection drop occurs at trigger time, the device boots into the wrong state, drifting completely from cloud configurations and skipping crucial daily cycles.
           </p>
         </div>
-        <div class="glass-card" style="border-left: 3px solid var(--accent-cyan); padding: 24px; box-shadow: var(--shadow-glow);">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <div class="glass-card" style="border-left: 3px solid var(--accent-royal); padding: 24px; box-shadow: var(--shadow-card);">
+          <h4 style="color: var(--text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
             Butler Stateful Simulation
           </h4>
@@ -286,7 +286,7 @@ extra_scripts: |
   </section>
 
   <!-- Deployment Types & Use Cases -->
-  <section class="section" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" id="butler-use-cases">
+  <section class="section" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" id="butler-use-cases">
     <div class="container">
       <div class="use-cases-grid">
         <!-- Left: Deployment Types -->
@@ -296,15 +296,15 @@ extra_scripts: |
           
           <div style="display: flex; flex-direction: column; gap: 24px;">
             <div class="glass-card" style="padding: 20px;">
-              <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">Sensor Only Nodes</h4>
+              <h4 style="margin-bottom: 8px;">Sensor Only Nodes</h4>
               <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Monitors and logs physical events locally in flash storage. Automatically streams buffered logs to local hubs or cloud backends when network links are restored.</p>
             </div>
             <div class="glass-card" style="padding: 20px;">
-              <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">Actuator Only Nodes</h4>
+              <h4 style="margin-bottom: 8px;">Actuator Only Nodes</h4>
               <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Triggers scheduled physical switches and relay changes locally. Fetches and updates new cron configurations from the network whenever links become active.</p>
             </div>
             <div class="glass-card" style="padding: 20px;">
-              <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">Integrated Controller Nodes</h4>
+              <h4 style="margin-bottom: 8px;">Integrated Controller Nodes</h4>
               <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Combines sensor telemetry with local trigger actions directly on the device. Runs fully independent logic loops offline and syncs control algorithms when connected.</p>
             </div>
           </div>
@@ -316,19 +316,19 @@ extra_scripts: |
           <p style="color: var(--text-sub); font-size: 0.95rem; margin-bottom: 32px;">Engineered specifically for environments where connection cuts are common but operations are critical.</p>
           
           <div style="display: flex; flex-direction: column; gap: 24px;">
-            <div class="glass-card" style="padding: 20px; border-left: 3px solid var(--accent-indigo);">
+            <div class="glass-card" style="padding: 20px; border-left: 3px solid var(--accent-royal);">
               <h4 style="color: var(--text-main); margin-bottom: 8px;">Smart Agriculture</h4>
               <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Solar-powered sensor nodes deployed across remote agricultural fields, syncing logs when farm vehicles with satellite hotspot links pass by.</p>
             </div>
-            <div class="glass-card" style="padding: 20px; border-left: 3px solid var(--accent-indigo);">
+            <div class="glass-card" style="padding: 20px; border-left: 3px solid var(--accent-royal);">
               <h4 style="color: var(--text-main); margin-bottom: 8px;">Resilient Home Automation</h4>
               <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Local automations continue executing even during router outages or power resets, completely shielding the property from internet or cloud provider shutdowns.</p>
             </div>
-            <div class="glass-card" style="padding: 20px; border-left: 3px solid var(--accent-indigo);">
+            <div class="glass-card" style="padding: 20px; border-left: 3px solid var(--accent-royal);">
               <h4 style="color: var(--text-main); margin-bottom: 8px;">Remote Extreme Deployments</h4>
               <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Bespoke controller setups for offline sensor gathering in extreme settings (e.g., deep sea research nodes, dense forest micro-climates, and deserts).</p>
             </div>
-            <div class="glass-card" style="padding: 20px; border-left: 3px solid var(--accent-indigo);">
+            <div class="glass-card" style="padding: 20px; border-left: 3px solid var(--accent-royal);">
               <h4 style="color: var(--text-main); margin-bottom: 8px;">Air-Gapped Industrial Networks</h4>
               <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">High-security configurations where operational commands and telemetry are too critical to ever be exposed to the public internet.</p>
             </div>
@@ -339,30 +339,30 @@ extra_scripts: |
   </section>
 
   <!-- Business Model & Customizations -->
-  <section class="section" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" id="butler-business">
+  <section class="section" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);" id="butler-business">
     <div class="container">
       <h2 style="text-align: center; margin-bottom: 12px;">Paid Customizations &amp; Services</h2>
       <p style="text-align: center; max-width: 600px; margin: 0 auto 48px auto; color: var(--text-sub); font-size: 0.95rem;">Butler is an open-core platform. We customize hardware and firmware setups to automate physical workflows for commercial operations.</p>
       
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
         <div class="glass-card" style="padding: 24px;">
-          <h4 style="color: var(--accent-indigo); margin-bottom: 8px;">1. Custom PCB &amp; Hardware Layouts</h4>
+          <h4 style="margin-bottom: 8px;">1. Custom PCB &amp; Hardware Layouts</h4>
           <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Board layout modifications tailored to custom physical form factors, custom relay specifications, and direct integration of specialized current, temperature, or humidity sensors.</p>
         </div>
         <div class="glass-card" style="padding: 24px;">
-          <h4 style="color: var(--accent-indigo); margin-bottom: 8px;">2. Bespoke Firmware Implementations</h4>
+          <h4 style="margin-bottom: 8px;">2. Bespoke Firmware Implementations</h4>
           <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Bespoke firmware logic including custom PWM power modulation profiles, complex sensor thresholds, hardware encryption chips, and industrial Modbus / RS485 communication protocols.</p>
         </div>
         <div class="glass-card" style="padding: 24px;">
-          <h4 style="color: var(--accent-indigo); margin-bottom: 8px;">3. White-Labeled Companion App</h4>
+          <h4 style="margin-bottom: 8px;">3. White-Labeled Companion App</h4>
           <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Branded builds of Butler Manager for corporate identity (custom logos, preset local hub DNS end-points, strict internal networking rules, and pre-packaged APK distributions).</p>
         </div>
         <div class="glass-card" style="padding: 24px;">
-          <h4 style="color: var(--accent-indigo); margin-bottom: 8px;">4. Local Hub Appliances &amp; Dashboards</h4>
+          <h4 style="margin-bottom: 8px;">4. Local Hub Appliances &amp; Dashboards</h4>
           <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Deploying customized on-premise local Linux appliances pre-loaded with secured MQTT brokers, local NTP chronometers, and firmware FOTA update managers for industrial sites.</p>
         </div>
         <div class="glass-card" style="padding: 24px; grid-column: span 1;">
-          <h4 style="color: var(--accent-indigo); margin-bottom: 8px;">5. Enterprise SLA &amp; Support</h4>
+          <h4 style="margin-bottom: 8px;">5. Enterprise SLA &amp; Support</h4>
           <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0; line-height: 1.6;">Support agreements covering periodic firmware security patches, on-site diagnostics synchronization, firmware maintenance cycles, and direct engineering help.</p>
         </div>
       </div>
@@ -372,12 +372,12 @@ extra_scripts: |
   <!-- Obfuscated Support / Contact Box -->
   <section class="section" id="butler-contact">
     <div class="container">
-      <div class="glass-card" style="max-width: 680px; margin: 0 auto; padding: 40px; text-align: center; border-color: rgba(99, 102, 241, 0.35); box-shadow: var(--shadow-glow);" id="butler-cta-box">
+      <div class="glass-card" style="max-width: 680px; margin: 0 auto; padding: 40px; text-align: center;" id="butler-cta-box">
         <h3 id="cta-box-title" style="margin-bottom: 12px; font-size: 1.5rem;">Automate Your Physical Activities Safely</h3>
         <p style="font-size: 0.95rem; margin-bottom: 28px; color: var(--text-sub); line-height: 1.6;">
           Have specialized requirements for fail-safe automation, state preservation, or custom embedded controllers? Let's discuss custom engineering specifications.
         </p>
-        <a href="mailto:niyogi.labs@gmail.com?subject=Butler%20Customization%20Inquiry" class="btn btn-primary" id="butler-cta-send-email" style="padding: 12px 28px; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4); background: var(--gradient-indigo-purple);">Email Customization Support</a>
+        <a href="mailto:niyogi.labs@gmail.com?subject=Butler%20Customization%20Inquiry" class="btn btn-primary" id="butler-cta-send-email">Email Customization Support</a>
         <div style="margin-top: 16px; font-size: 0.85rem; color: var(--text-muted);">
           Inquiries at: <strong>niyogi.labs [at] gmail.com</strong>
         </div>
